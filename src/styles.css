@@ -1,0 +1,119 @@
+html {
+  scroll-padding-top: 50px;
+}
+
+body {
+  font-family: var(--primary-font);
+  font-size: var(--defalut-font-size);
+  background: var(--primary-background);
+  color: var(--long-text-color);
+  font-size: var(--defalut-font-size);
+  font-optical-sizing: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--highlight-text-color);
+}
+
+.lead {
+  color: var(--highlight-text-color);
+}
+
+a {
+  color: var(--link-text-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a.inline-link {
+  color: var(--link-text-color);
+  text-decoration: none;
+  padding-bottom: 0.1rem;
+  border-bottom: 1px solid var(--link-text-color);
+}
+
+a.inline-link:hover {
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.section-title {
+  font-size: 36pt;
+  padding-left: 5px;
+  margin-bottom: 1rem;
+  color: var(--highlight-text-color)
+}
+
+.section-title::before {
+  content: "/";
+
+  color: var(--primary-color);
+  margin-right: 6px;
+  font-weight: 1000;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.15em;
+}
+
+.decor-divider {
+  height: 2px;
+  background: var(--primary-color);
+  width: 60px;
+  margin: 2rem auto;
+}
+
+.text-emphasis {
+  padding-bottom: 0.3rem;
+  border-bottom: 3px solid var(--primary-color);
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--primary-btn-background-color);
+  border: none;
+  color: var(--highlight-text-color);
+  ;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover-color);
+}
+
+.btn-secondary {
+  background: var(--secondary-btn-background-color);
+  border: none;
+  color: var(--highlight-text-color);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-hover-color);
+}
+
+.btn-outline-light {
+  color: var(--highlight-text-color);
+  border-color: var(--highlight-text-color);
+}
+
+.tech-stack {
+  margin: 20px 0;
+  font-family: var(--technical-font);
+}
+
+.tech-stack span {
+  background-color: var(--primary-color-dark-4);
+  border: var(--primary-border);
+  color: var(--highlight-text-color);
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  display: inline-block;
+}

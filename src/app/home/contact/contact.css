@@ -1,0 +1,37 @@
+#contact {
+  font-size: var(--larger-font-size);
+  border-top: var(--primary-border);
+}
+
+#contact a {
+  color: var(--long-text-color);
+}
+
+#contact a:hover {
+  color: var(--primary-color);
+}
+
+.profile-bg {
+  background:
+    radial-gradient(circle at top left,
+      rgba(255, 255, 255, 0.12),
+      transparent 55%),
+    linear-gradient(135deg,
+      #5f6b73 0%,
+      #4b555c 35%,
+      #384147 65%,
+      #252b30 100%);
+}
+
+.img-profile {
+  max-height: 400px;
+}
+
+
+#contact .card .theme-border {
+  border-color: var(--primary-color);
+}
+
+#contact .card-body h2 {
+  color: var(--highlight-text-color);
+}

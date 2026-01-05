@@ -1,0 +1,4 @@
+footer {
+  background-color: var(--dark-background);
+  border-top: var(--primary-border);
+}

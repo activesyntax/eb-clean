@@ -1,0 +1,38 @@
+:root {
+  --primary-background: #0d0d0f;
+  --secondary-background: #16161a;
+  --dark-background: #000;
+
+  --primary-border-color: #24242a;
+  --primary-border: 1px solid var(--primary-border-color);
+  --primary-color: #1E90FF;
+  --primary-color-dark: #0C487F;
+
+  --primary-color-dark-1: #083660;
+  --primary-color-dark-2: #1D2D41;
+  --primary-color-dark-3: #25313D;
+
+  --primary-color-dark-4: #1D2730;
+  --primary-color-dark-5: #042442;
+  --primary-btn-background-color: #0F4F80;
+
+  --primary-hover-color: #a62124;
+  --secondary-hover-color: #a62124;
+
+  --secondary-color: #575757;
+  --secondary-btn-background-color: #303030;
+  --accent-color: #63D2FF;
+  --highlight-text-color: #EAEAEA;
+  --long-text-color: #808080;
+  --link-text-color: #BFDBFE;
+
+
+  /* Fonts */
+  --default-font-size: 13pt;
+  --larger-font-size: 14pt;
+  --large-font-size: 20pt;
+  --primary-font: "Solway", serif;
+  --secondary-font: "Funnel Sans", sans-serif;
+  --special-font: 'Orbitron', monospace;
+  --technical-font: "Source Code Pro", monospace;
+}

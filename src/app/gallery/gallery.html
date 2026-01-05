@@ -1,0 +1,20 @@
+<div #galleryEl class="pswp-gallery">
+
+  @if (thumbnailsVisible()) {
+  @for (image of images(); track image.large) {
+  <a [href]="image.large" [attr.data-pswp-width]="image.width" [attr.data-pswp-height]="image.height">
+    <img [src]="image.thumb" alt="" loading="lazy" />
+  </a>
+  }
+  } @else {
+  <!-- Hidden anchors required for PhotoSwipe -->
+  @for (image of images(); track image.large) {
+  <a [href]="image.large" [attr.data-pswp-width]="image.width" [attr.data-pswp-height]="image.height"
+    style="display:none"></a>
+  }
+  }
+
+</div>
+
+<!-- Optional projected button -->
+<ng-content></ng-content>

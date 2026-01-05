@@ -1,0 +1,30 @@
+#services {
+  border-bottom: var(--primary-border);
+}
+
+.service-card {
+  background: var(--secondary-background);
+  border: var(--primary-border);
+  border-radius: 12px;
+  padding: 30px;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.service-card i {
+  font-size: 32pt;
+  margin-bottom: 12px;
+  color: var(--primary-color);
+}
+
+.service-card h5 {
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+.service-card p {
+  font-size: var(--default-font-size);
+  color: var(--long-text-color);
+  font-family: var(--secondary-font);
+  vertical-align: text-top;
+}

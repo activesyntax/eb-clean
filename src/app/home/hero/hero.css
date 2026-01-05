@@ -1,0 +1,59 @@
+.hero {
+  padding: 140px 0 100px 0;
+  text-align: center;
+
+  background:
+    radial-gradient(circle at center,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.3) 40%,
+      rgba(0, 0, 0, 0) 100%),
+
+    url('/assets/img/bg.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* For dark blending if needed */
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero h3 {
+  color: var(--highlight-text-color);
+  font-weight: bold;
+}
+
+.logo-box {
+  border-bottom: 3px solid #24242a;
+  padding: clamp(5px, 3vw, 40px) clamp(10px, 5vw, 50px);
+  display: inline-block;
+  margin-bottom: clamp(10px, 2vh, 30px);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.logo-box img {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+
+  .logo-box img {
+    max-width: 500px;
+  }
+}
+
+.logo-text {
+  font-family: var(--special-font);
+  font-size: 4rem;
+  letter-spacing: 2px;
+  color: var(--highlight-text-color);
+}
+
+.logo-text .active {
+  color: var(--primary-color);
+  font-weight: bolder;
+}

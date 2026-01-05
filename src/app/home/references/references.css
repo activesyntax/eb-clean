@@ -1,0 +1,64 @@
+#references {
+
+  border-bottom: var(--primary-border);
+}
+
+.reference-card {
+  background: var(--secondary-background);
+  border: var(--primary-border);
+  border-radius: 12px;
+}
+
+.reference-card p {
+  font-size: var(--defalut-font-size);
+}
+
+.ref-body .title {
+  font-weight: bold;
+  font-size: 20pt;
+  text-align: center;
+  display: block;
+  width: 80%;
+  margin-top: 1.5rem;
+}
+
+.ref-body .subtitle {
+
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+  color: var(--highlight-text-color);
+  font-size: larger;
+}
+
+.ref-body p {
+  margin-top: 1.5rem;
+  font-family: var(--secondary-font);
+  text-align: left;
+}
+
+.ref-logo-wrapper {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.ref-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 2px;
+}
+
+/* Screenshot thumbnails */
+.ref-screenshot {
+  width: 100%;
+  height: 200px;
+  border-radius: 0.5rem;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.ref-screenshot:hover {
+  opacity: 0.85;
+}
