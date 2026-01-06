@@ -1,4 +1,4 @@
-![Active Syntax Portfolio Screenshot](screenshots/active-syntax-web-screenshot-01.png)
+# EB-Clean
 
 ## Overview
 
