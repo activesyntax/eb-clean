@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "activesyntax": {
+    "eb-clean": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -59,10 +59,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "activesyntax:build:production"
+              "buildTarget": "eb-clean:build:production"
             },
             "development": {
-              "buildTarget": "activesyntax:build:development"
+              "buildTarget": "eb-clean:build:development"
             }
           },
           "defaultConfiguration": "development"
