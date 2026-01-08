@@ -79,8 +79,8 @@ a.inline-link:hover {
 .btn-primary {
   background: var(--primary-btn-background-color);
   border: none;
-  color: var(--highlight-text-color);
-  ;
+  color: var(--primary-btn-text-color);
+  font-weight: bolder;
 }
 
 .btn-primary:hover {
