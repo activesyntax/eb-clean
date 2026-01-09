@@ -1,6 +1,6 @@
 export const Branding = {
   site: {
-    name = 'EB Clean',
+    name: 'EB Clean',
     slogan: 'Professional surface cleaning',
     title: 'EB Clean - Professional surface cleaning',
   },

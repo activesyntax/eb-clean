@@ -71,7 +71,7 @@ a.inline-link:hover {
 
 .text-emphasis {
   padding-bottom: 0.3rem;
-  border-bottom: 3px solid var(--primary-color);
+  border-bottom: 3px solid #3684D1FF;
   margin-bottom: 0.5rem;
   display: inline-block;
 }
