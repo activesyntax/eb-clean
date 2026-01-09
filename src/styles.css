@@ -80,7 +80,7 @@ a.inline-link:hover {
   background: var(--primary-btn-background-color);
   border: none;
   color: var(--primary-btn-text-color);
-  font-weight: bolder;
+  font-family: Arial;
 }
 
 .btn-primary:hover {

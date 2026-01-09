@@ -13,7 +13,7 @@
   --primary-border: 1px solid var(--primary-border-color);
 
   /* Primary (Dark Blue) */
-  --primary-color: #FACC15;
+  --primary-color: #FBD951FF;
   /* strong blue */
   --primary-color-dark: #1E40AF;
 
@@ -24,7 +24,7 @@
   --primary-color-dark-5: #0B1C33;
 
   /* Buttons */
-  --primary-btn-background-color: #FACC15;
+  --primary-btn-background-color: #FBD951FF;
   --primary-btn-text-color: #222222;
 
   /* Hover / Accent (Yellow) */
