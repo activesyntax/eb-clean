@@ -1,11 +1,11 @@
 export const Branding = {
   site: {
     name: 'EB Clean',
-    slogan: 'Professional surface cleaning',
-    title: 'EB Clean - Professional surface cleaning',
+    slogan: 'Gondos tisztítás, látható eredmény.',
+    title: 'EB Clean - Gondos tisztítás, látható eredmény.',
   },
   logo: {
     src: 'assets/img/branding/eb-clean-logo.svg',
-    alt: 'EB Clean - Professional surface cleaning'
+    alt: 'EB Clean - Gondos tisztítás, látható eredmény.'
   }
 };

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Branding } from '../../shared/branding/branding';
 
 @Component({
   selector: 'app-home-hero',
@@ -8,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class Hero {
 
+  branding = Branding
 }
