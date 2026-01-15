@@ -5,7 +5,7 @@ export const Branding = {
     title: 'EB Clean - Gondos tisztítás, látható eredmény.',
   },
   logo: {
-    src: 'assets/img/branding/eb-clean-logo.svg',
+    src: 'assets/img/eb-clean-logo.png',
     alt: 'EB Clean - Gondos tisztítás, látható eredmény.'
   }
 };

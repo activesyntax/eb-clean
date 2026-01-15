@@ -26,17 +26,28 @@
 
 .logo-box {
   /* border-bottom: 3px solid #24242a; */
-  padding: clamp(5px, 3vw, 40px) clamp(10px, 5vw, 50px);
+  padding: clamp(5px, 3vh, 40px) clamp(10px, 3vw, 50px);
   display: inline-block;
   margin-bottom: clamp(10px, 2vh, 30px);
   max-width: 100%;
   box-sizing: border-box;
+
+  border-radius: 20px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+  /* backdrop-filter: blur(2px); */
+  backdrop-filter: blur(6px) saturate(110%);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15%;
+  /* todo gradient*/
 }
 
 .logo-box img {
   width: 100%;
   max-width: 300px;
   height: auto;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
