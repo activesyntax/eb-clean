@@ -42,7 +42,7 @@
   max-width: 100%;
   box-sizing: border-box;
 
-  border-radius: 15%;
+  border-radius: 20%;
   background:
     radial-gradient(ellipse at center, #ffffff 45%, transparent 65%),
     url('/assets/img/stones-01.png');
