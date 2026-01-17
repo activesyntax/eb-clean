@@ -23,9 +23,15 @@
   color: var(--highlight-text-color);
   font-weight: bold;
   /* background-color: var(--primary-color-dark); */
-  padding: 0.5rem 1rem;
+  padding: 0rem 0rem;
   display: inline-block;
   font-size: 36pt;
+  border-radius: 20%;
+}
+
+.hero p {
+
+  font-size: var(--large-font-size);
 }
 
 .logo-box {

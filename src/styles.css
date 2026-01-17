@@ -126,3 +126,8 @@ a.inline-link:hover {
   margin-bottom: 6px;
   display: inline-block;
 }
+
+.glass-effect {
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  /* background-color: red; */
