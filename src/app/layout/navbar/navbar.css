@@ -2,13 +2,11 @@
 .navbar-nav {
   display: flex;
   align-items: center;
-  /* This is the key for vertical alignment */
 }
 
 .custom-nav {
   background: #0d0d0f;
-  border-bottom: 1px solid #24242a;
-  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #24242a80;
 }
 
 /* Original Nav Link Styles & Hover Effects */

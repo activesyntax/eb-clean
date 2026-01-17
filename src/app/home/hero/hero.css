@@ -22,6 +22,8 @@
 .hero h3 {
   color: var(--highlight-text-color);
   font-weight: bold;
+  background-color: var(--primary-color-dark);
+  padding: 0rem 0.5rem;
 }
 
 .logo-box {

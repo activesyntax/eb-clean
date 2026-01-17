@@ -69,17 +69,20 @@ a.inline-link:hover {
 }
 
 .text-emphasis {
-  padding-bottom: 0.3rem;
-  border-bottom: 3px solid #3684D1FF;
-  margin-bottom: 0.5rem;
+  /* padding-bottom: 0.3rem; */
+  /* border-bottom: 3px solid #3684D1FF; */
+  /* margin-bottom: 0.5rem; */
   display: inline-block;
+  color: var(--primary-color);
 }
 
 .btn-primary {
   background: var(--primary-btn-background-color);
   border: none;
   color: var(--primary-btn-text-color);
-  font-family: Arial;
+  /* font-family: Arial; */
+  /* font-weight: bold; */
+  font-size: 14pt;
 }
 
 .btn-primary:hover {

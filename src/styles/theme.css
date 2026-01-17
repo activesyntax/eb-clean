@@ -12,10 +12,10 @@
   /* dark blue-gray */
   --primary-border: 1px solid var(--primary-border-color);
 
-  /* Primary (Dark Blue) */
   --primary-color: #FBD951FF;
+
   /* strong blue */
-  --primary-color-dark: #1E40AF;
+  --primary-color-dark: #010205FF;
 
   --primary-color-dark-1: #172554;
   --primary-color-dark-2: #1E293B;

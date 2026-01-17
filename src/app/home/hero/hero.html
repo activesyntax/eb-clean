@@ -6,10 +6,7 @@
       <img src="{{ branding.logo.src }}" alt="{{ branding.logo.alt }}" class="">
     </div>
 
-    <h3 class="mt-2">
-      {{ branding.site.slogan }}
-      <!-- Gondos <span class="text-emphasis">tisztítás</span>, tartós <span class="text-emphasis">eredmény</span>. -->
-    </h3>
+    <h3 class="mt-4" [innerHTML]="branding.site.sloganHtml"></h3>
 
     <p class="mt-5 fs-5">
       {{ branding.site.description }}
