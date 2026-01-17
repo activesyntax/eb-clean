@@ -70,10 +70,17 @@ a.inline-link:hover {
 
 .text-emphasis {
   /* padding-bottom: 0.3rem; */
-  /* border-bottom: 3px solid #3684D1FF; */
+  /* border-bottom: 3px solid #5F8FB8; */
+  /* border-top: 3px solid #5F8FB8; */
   /* margin-bottom: 0.5rem; */
   display: inline-block;
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
+  /* color: #5F8FB8; */
+  color: #4f90c7;
+  /* color: #83a8c7; */
+  /* color: #abbac7; */
+  /* color: var(--logo-color-dark); */
+  /* text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); */
 }
 
 .btn-primary {
