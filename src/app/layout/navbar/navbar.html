@@ -1,40 +1,28 @@
-<!-- NAVBAR -->
-<nav id="mainNav" class="navbar  navbar-dark bg-dark navbar-expand-lg fixed-top custom-nav">
-
+<nav id="mainNav" class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top custom-nav">
   <div class="container">
-
-    <!-- Logo  -->
-    <a class="nav-logo" href="#">
-
-      <img src="/assets/img/eb-clean-logo.svg" alt="EB Clean - napelemek, csomagautomaták, sírkövek tisztítása">
-      <!-- &#123; <span class="active">Active</span> / Syntax &#125; -->
-    </a>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav mx-auto align-items-center">
         <li class="nav-item">
-          <a [class.active-link]="activeSection() === 'hero'" class="nav-link" href="#">Home</a>
+          <a [class.active-link]="activeSection() === 'hero'" class="nav-link" href="#">EB Clean</a>
         </li>
         <li class="nav-item">
-          <a [class.active-link]="activeSection() === 'services'" class="nav-link" href="#services">Services</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" [class.active-link]="activeSection() === 'references'" href="#references">References</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" [class.active-link]="activeSection() === 'experience'" href="#experience">Experience</a>
+          <a [class.active-link]="activeSection() === 'services'" class="nav-link" href="#services">Szolgáltatások</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [class.active-link]="activeSection() === 'contact'" href="#contact">Contact</a>
+          <a class="nav-link" [class.active-link]="activeSection() === 'references'" href="#references">Előnyök</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active-link]="activeSection() === 'contact'" href="#contact">Kapcsolat</a>
+        </li>
+        <li class="nav-item">
+          <a href="#services" class="btn btn-primary nav-button ms-lg-3"
+            [class.active-link]="activeSection() === 'experience'">Árajánlat</a>
         </li>
       </ul>
     </div>
-
   </div>
 </nav>

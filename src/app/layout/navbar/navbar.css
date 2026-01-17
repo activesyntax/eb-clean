@@ -1,9 +1,26 @@
+/* Layout & Alignment */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  /* This is the key for vertical alignment */
+}
+
+.custom-nav {
+  background: #0d0d0f;
+  border-bottom: 1px solid #24242a;
+  backdrop-filter: blur(8px);
+}
+
+/* Original Nav Link Styles & Hover Effects */
 .nav-link {
   color: var(--highlight-text-color) !important;
   font-weight: 500;
   font-size: 1.2rem;
   margin-left: 20px;
   transition: all 180ms ease;
+  /* Ensure a transparent border exists so the text doesn't "jump" on hover */
+  border-bottom: 3px solid transparent;
+  padding-bottom: 6px;
 }
 
 .nav-link:hover {
@@ -16,39 +33,37 @@ nav a.active-link {
   border-bottom: 3px solid var(--primary-color);
 }
 
-.nav-logo {
+/* Button Specific Styles */
+.nav-button {
   display: inline-block;
-  /* font-family: 'Orbitron'; */
-  /* font-size: 1.7rem; */
-  /* color: var(--highlight-text-color); */
-  /* text-decoration: none; */
-  /* transition: transform 180ms ease; */
+  padding: 8px 20px;
+  margin-left: 20px;
+  /* Resetting hover/active effects so the button doesn't get a bottom border */
+  border-bottom: none !important;
 }
 
-
-.nav-logo img {
-  padding-top: clamp(2px, 0.5vw, 5px);
-
-  max-height: 40px;
-  /* desktop cap */
-  height: 100%;
+.nav-button:hover {
+  border-bottom: none !important;
+  transform: translateY(-1px);
+  /* Optional: slight lift instead of border */
 }
 
-@media (max-width: 768px) {
-
-  .logo-box img {
-    min-height: 40px;
-    /* optional — tune as desired */
+/* Responsive Fixes */
+@media (max-width: 991px) {
+  .navbar-nav {
+    padding: 1rem 0;
+    text-align: center;
   }
-}
 
-.nav-logo .active {
-  color: var(--primary-color);
-  font-weight: bold;
-}
+  .nav-link {
+    margin-left: 0;
+    margin-bottom: 10px;
+    display: inline-block;
+    /* Keeps border-bottom from stretching full width */
+  }
 
-.custom-nav {
-  background: #0d0d0f;
-  border-bottom: 1px solid #24242a;
-  backdrop-filter: blur(8px);
+  .nav-button {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 }

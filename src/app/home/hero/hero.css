@@ -1,5 +1,5 @@
 .hero {
-  padding: 140px 0 100px 0;
+  padding: 120px 0 100px 0;
   text-align: center;
 
   background:
@@ -40,8 +40,6 @@
   /* Ensure the marble image covers the whole area nicely */
   background-size: cover;
   background-position: center;
-
-  /* box-shadow: 0 0 10px #ffffffcc; */
 }
 
 .logo-box img {

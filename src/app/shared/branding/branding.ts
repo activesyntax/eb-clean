@@ -3,6 +3,7 @@ export const Branding = {
     name: 'EB Clean',
     slogan: 'Gondos tisztítás, látható eredmény.',
     title: 'EB Clean - Gondos tisztítás, látható eredmény.',
+    description: 'Napelemek, falfelületek, térkövek, síremlékek professzionális tiszítása. '
   },
   logo: {
     src: 'assets/img/eb-clean-logo.png',
