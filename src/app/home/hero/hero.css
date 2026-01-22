@@ -42,22 +42,22 @@
 .before-after-box img {
   /* width: 100%; */
   max-height: 500px;
-  height: 80vh;
+  height: 70vh;
   box-sizing: border-box;
 }
 
 .logo-box {
-  /* border-bottom: 3px solid #24242a; */
   padding: clamp(5px, 3vh, 40px) clamp(10px, 3vw, 50px);
   display: inline-block;
   margin-bottom: clamp(10px, 2vh, 30px);
   max-width: 100%;
   box-sizing: border-box;
 
-  border-radius: 20%;
-  background:
-    radial-gradient(ellipse at center, #ffffff 45%, transparent 65%),
-    url('/assets/img/stones-01.png');
+  border-radius: 70%;
+  background-color: antiquewhite;
+  /* background: */
+  /* radial-gradient(ellipse at center, #ffffff 45%, transparent 65%), */
+  /* url('/assets/img/stones-01.png'); */
 
   /* Ensure the marble image covers the whole area nicely */
   background-size: cover;
@@ -65,10 +65,10 @@
 }
 
 .logo-box img {
-  width: 100%;
   max-width: 300px;
   height: auto;
   box-sizing: border-box;
+  height: 15vh;
 }
 
 @media (max-width: 768px) {
