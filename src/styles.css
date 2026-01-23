@@ -83,28 +83,90 @@ a.inline-link:hover {
   /* text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); */
 }
 
-.btn-primary {
-  background: var(--primary-btn-background-color);
+
+/* Közös stílus a gomboknak */
+.btn-cta {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  /* Modern, kerekített sarkok */
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-align: center;
+}
+
+
+/* Elsődleges gomb - Finomított arany/sárga */
+.btn-cta.primary {
+  /* Egy lágyabb, elegánsabb sárga gradiens */
+  background: linear-gradient(135deg, #eecb6b 0%, #d9a83d 100%);
+  color: #222;
+  /* Sötétszürke szöveg a jobb olvashatóságért */
   border: none;
-  color: var(--primary-btn-text-color);
-  /* font-family: Arial; */
-  /* font-weight: bold; */
-  font-size: 14pt;
+  box-shadow: 0 4px 12px rgba(217, 168, 61, 0.2);
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-.btn-primary:hover {
-  background: var(--primary-hover-color);
+.btn-cta.primary:hover {
+  background: linear-gradient(135deg, #f3d68a 0%, #e6b347 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(217, 168, 61, 0.3);
 }
 
-.btn-secondary {
-  background: var(--secondary-btn-background-color);
-  border: none;
-  color: var(--highlight-text-color);
+/* Másodlagos gomb - Sötét tónusú, hogy ne versengjen a sárgával */
+.btn-cta.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  /* Áttetsző fehér */
+  backdrop-filter: blur(5px);
+  /* Üveghatás */
+  color: #eee;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-left: 15px;
 }
 
-.btn-secondary:hover {
-  background: var(--secondary-hover-color);
+.btn-cta.secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  transform: translateY(-2px);
 }
+
+/* Mobil optimalizálás */
+@media (max-width: 576px) {
+  .btn-cta {
+    display: block;
+    width: 100%;
+    margin: 10px 0 !important;
+  }
+}
+
+/* .btn-primary { */
+/* background: var(--primary-btn-background-color); */
+/* border: none; */
+/* color: var(--primary-btn-text-color); */
+/* font-family: Arial; */
+/* font-weight: bold; */
+/* font-size: 14pt; */
+/* } */
+
+/* .btn-primary:hover { */
+/* background: var(--primary-hover-color); */
+/* } */
+
+/* .btn-secondary { */
+/* background: var(--secondary-btn-background-color); */
+/* border: none; */
+/* color: var(--highlight-text-color); */
+/* } */
+
+/* .btn-secondary:hover { */
+/* background: var(--secondary-hover-color); */
+/* } */
 
 .btn-outline-light {
   color: var(--highlight-text-color);
