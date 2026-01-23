@@ -30,7 +30,6 @@
 }
 
 .hero p {
-
   font-size: var(--large-font-size);
 }
 
@@ -82,7 +81,11 @@
 /* Tablet/Mobile Adjustments */
 @media (max-width: 768px) {
   .before-after-box img {
-    height: 50vh;
+    /* height: 70vw */
+    /* max-height: 500px; */
+    min-height: 100px;
+    height: auto;
+    width: 100%;
     /* Shorter image on mobile */
   }
 
@@ -94,3 +97,8 @@
     height: 10vh;
   }
 }
+
+@media (max-width: 400px) {
+  .before-after-box img {
+    visibility: collapse;
+  }
