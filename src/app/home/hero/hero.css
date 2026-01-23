@@ -1,5 +1,5 @@
 .hero {
-  padding: 120px 0 100px 0;
+  padding: 90px 0 100px 0;
   text-align: center;
 
   background:
@@ -34,58 +34,63 @@
   font-size: var(--large-font-size);
 }
 
-.hero .before-after-box {
-
-  /* display: inline-block; */
+/* Container for the image and logo */
+.hero-image-wrapper {
+  position: relative;
+  display: inline-block;
+  /* Wraps tightly around the image */
+  max-width: 100%;
 }
 
 .before-after-box img {
-  /* width: 100%; */
-  max-height: 500px;
+  max-height: 400px;
   height: 70vh;
-  box-sizing: border-box;
+  width: auto;
+  display: block;
+  /* Removes bottom whitespace */
+  border-radius: 8px;
+  /* Optional: smooths the edges */
 }
 
 .logo-box {
-  padding: clamp(5px, 3vh, 40px) clamp(10px, 3vw, 50px);
-  display: inline-block;
-  margin-bottom: clamp(10px, 2vh, 30px);
-  max-width: 100%;
-  box-sizing: border-box;
+  position: absolute;
+  /* Push to the exact center */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  border-radius: 70%;
+  /* Circle Styling */
   background-color: antiquewhite;
-  /* background: */
-  /* radial-gradient(ellipse at center, #ffffff 45%, transparent 65%), */
-  /* url('/assets/img/stones-01.png'); */
+  border-radius: 50%;
+  /* Force perfect circle */
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  /* Adds depth over the image */
 
-  /* Ensure the marble image covers the whole area nicely */
-  background-size: cover;
-  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-box img {
-  max-width: 300px;
-  height: auto;
-  box-sizing: border-box;
   height: 15vh;
+  /* Responsive height */
+  max-height: 120px;
+  width: auto;
 }
 
+/* Tablet/Mobile Adjustments */
 @media (max-width: 768px) {
+  .before-after-box img {
+    height: 50vh;
+    /* Shorter image on mobile */
+  }
+
+  .logo-box {
+    padding: 10px;
+  }
 
   .logo-box img {
-    max-width: 500px;
+    height: 10vh;
   }
-}
-
-.logo-text {
-  font-family: var(--special-font);
-  font-size: 4rem;
-  letter-spacing: 2px;
-  color: var(--highlight-text-color);
-}
-
-.logo-text .active {
-  color: var(--primary-color);
-  font-weight: bolder;
 }
