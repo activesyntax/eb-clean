@@ -34,7 +34,7 @@
   --secondary-hover-color: #EAB308;
 
   /* Secondary UI */
-  --secondary-color: #9CA3AF;
+  --secondary-color: #5F8FB8;
   /* muted gray-blue text */
   --secondary-btn-background-color: #1F2937;
 
@@ -52,6 +52,7 @@
   --default-font-size: 13pt;
   --larger-font-size: 14pt;
   --large-font-size: 20pt;
+  --section-font-size: 36pt;
 
   --primary-font: "Lexend", sans-serif;
   --secondary-font: "Funnel Sans", sans-serif;
