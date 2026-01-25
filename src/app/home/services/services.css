@@ -6,25 +6,53 @@
   background: var(--secondary-background);
   border: var(--primary-border);
   border-radius: 12px;
-  padding: 30px;
-  transition: 0.2s;
+  overflow: hidden;
+  /* This clips the image to the card's rounded corners */
+  transition: 0.3s ease;
   text-align: center;
 }
 
-.service-card i {
-  font-size: 32pt;
-  margin-bottom: 12px;
-  color: var(--primary-color);
+/* .service-card:hover { */
+/* transform: translateY(-5px); */
+/* border-color: var(--primary-color); */
+/* Subtle highlight on hover */
+/* } */
+
+/* Image fills the top half of the card */
+.service-card-img {
+  width: 100%;
+  height: 200px;
+  /* Adjust height as needed */
+  object-fit: cover;
+  /* Ensures the image fills the area without stretching */
+  display: block;
+}
+
+/* Container for text to provide padding since card padding was removed */
+.service-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .service-card h5 {
-  font-size: 20pt;
+  font-size: 16pt;
   font-weight: bold;
+  margin-bottom: 0px;
+  /* color: var(--secondary-color); */
 }
 
 .service-card p {
-  font-size: var(--default-font-size);
+  font-size: 0.95rem;
   color: var(--long-text-color);
   font-family: var(--secondary-font);
-  vertical-align: text-top;
+  margin-bottom: 0;
+}
+
+.decor-divider {
+  height: 2px;
+  width: 80%;
+  background: var(--primary-color);
+  margin: 10px auto;
 }
