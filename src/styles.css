@@ -51,28 +51,36 @@ a.inline-link:hover {
 }
 
 .section-title::before {
-  content: "";
+  content: "|";
   display: inline-block;
+  color: var(--primary-color);
+  /* color: var(--secondary-color); */
+  margin-right: 12px;
+  padding-bottom: 20px;
+  font-weight: 1000;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.10em;
 
   /* 1. The Size */
-  width: 26pt;
-  height: 26pt;
+  /* width: 26pt; */
+  /* height: 26pt; */
 
   /* 2. The Blue Border */
-  border: 5px solid var(--secondary-color);
+  /* border: 5px solid #ffcc00; */
   /* 3. The Gap */
-  padding: 2px;
+  /* padding: 2px; */
 
   /* 4. The Yellow Content */
-  background-color: #ffcc00;
+  /* background-color: #121826; */
 
   /* 5. The Magic: Prevents yellow from going under the blue border */
-  background-clip: content-box;
+  /* background-clip: content-box; */
 
-  margin-right: 12px;
-  vertical-align: middle;
-  position: relative;
-  top: -7px;
+  /* margin-right: 12px; */
+  /* vertical-align: middle; */
+  /* position: relative; */
+  /* top: -7px; */
 }
 
 .decor-divider {
