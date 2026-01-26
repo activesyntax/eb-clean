@@ -7,23 +7,25 @@
     <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav mx-auto align-items-center">
         <li class="nav-item">
-          <a [class.active-link]="activeSection() === 'hero'" class="nav-link" href="#">EB Clean</a>
+          <a [class.active-link]="activeSection() === 'bemutatkozas'" class="nav-link" href="#bemutatkozas">EB Clean</a>
         </li>
         <li class="nav-item">
-          <a [class.active-link]="activeSection() === 'services'" class="nav-link" href="#services">Szolgáltatások</a>
+          <a [class.active-link]="activeSection() === 'szolgaltatasok'" class="nav-link"
+            href="#szolgaltatasok">Szolgáltatások</a>
         </li>
         <li class="nav-item">
-          <a [class.active-link]="activeSection() === 'references'" class="nav-link" href="#references">Referenciák</a>
+          <a class="nav-link" [class.active-link]="activeSection() === 'elonyok'" href="#elonyok">Előnyök</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [class.active-link]="activeSection() === 'references'" href="#pros">Előnyök</a>
+          <a [class.active-link]="activeSection() === 'referenciak'" class="nav-link"
+            href="#referenciak">Referenciák</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [class.active-link]="activeSection() === 'contact'" href="#contact">Kapcsolat</a>
+          <a class="nav-link" [class.active-link]="activeSection() === 'kapcsolat'" href="#kapcsolat">Kapcsolat</a>
         </li>
         <li class="nav-item">
-          <a href="#services" class="btn-cta primary nav-button ms-lg-3"
-            [class.active-link]="activeSection() === 'contact'">Árajánlat</a>
+          <a href="#arajanlat" class="btn-cta primary nav-button ms-lg-3"
+            [class.active-link]="activeSection() === 'arajanlat'">Árajánlat</a>
         </li>
       </ul>
     </div>

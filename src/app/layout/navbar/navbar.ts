@@ -10,12 +10,11 @@ import { filter } from 'rxjs/operators';
 export class Navbar implements AfterViewInit {
 
   activeSection = signal<string | null>(null);
-  sections = ['hero', 'services', 'references', 'experience', 'contact'];
+  sections = ['bemutatkozas', 'szolgaltatasok', 'referenciak', 'elonyok', 'kapcsolat'];
 
   constructor(private router: Router) {}
 
   ngAfterViewInit() {
-    // Wait for home component to be loaded into the DOM
     this.router.events
       .pipe(filter(e => e instanceof NavigationEnd))
       .subscribe(() => this.initObserver());
@@ -36,7 +35,6 @@ export class Navbar implements AfterViewInit {
       });
     }, options);
 
-    // Try again after routing
     this.sections.forEach(id => {
       const element = document.getElementById(id);
       if (element) observer.observe(element);
