@@ -1,66 +1,51 @@
-  /* Módosított stílusok a minimalista, keret nélküli megjelenéshez */
+#elonnyok {
+  background-color: #050505;
+  padding: 60px 0;
+}
 
-  /* A fő tároló elem stílusának alaphelyzetbe állítása (nincs keret, nincs háttér) */
-  .experience-item {
-    background-color: transparent;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    color: #e0e0e0;
-    margin-left: 5px;
-  }
+.benefit-card {
+  background: #242830;
+  /* Kicsit világosabb szürke a kártyáknak */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 40px 30px;
+  text-align: center;
+  height: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
 
-  .logo-strip {
-    /* background-color: #1b1b1b; */
-    padding: 15px 0px;
-    /* border-radius: 6px; */
-    display: block;
-    /* margin-bottom: 25px; */
-    /* width: fit-content; */
-  }
+.benefit-card:hover {
+  transform: translateY(-5px);
+  /* Sárgás izzás hover esetén */
+  box-shadow: 0 10px 25px rgba(255, 204, 0, 0.1);
+  border-color: rgba(255, 204, 0, 0.3);
+}
 
-  .company-logo {
-    display: block;
-    max-height: 50px;
-    /* Egységes magasság a logóknak */
-    width: auto;
-    max-width: 100%;
-  }
+.benefit-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+  display: block;
+}
 
+.benefit-card h5 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+}
 
+.benefit-card p {
+  color: #a0a8b3;
+  /* Halványabb szövegszín a leírásnak */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
 
-
-  .details-separator {
-    border: 0;
-    height: 2px;
-    background-color: #007bff;
-    width: 40%;
-    margin: 20px 0;
-    opacity: 1;
-  }
-
-  /* Részletek szövege - beleolvad a háttérbe, nincs külön doboz */
-  .details-content {
-    font-family: var(--secondary-font);
-    color: var(--long-text-color);
-    line-height: 1.6;
-  }
-
-  .details-label {
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    border-bottom: 0.1rem;
-    border-bottom: 1px solid var(--secondary-color);
-    letter-spacing: 1px;
-    font-weight: bold;
-    color: #6c757d;
-    /* Még halványabb címke */
-    margin-bottom: 10px;
-    display: inline-block;
-  }
-
-  .row-large-gap {
-    --bs-gutter-y: 5rem;
-    --bs-gutter-x: 5rem;
-  }
+/* Opcionális: Ha valódi ikonokat használsz emoji helyett */
+.benefit-icon img,
+.benefit-icon i {
+  color: #ffcc00;
+  filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.5));
+}
