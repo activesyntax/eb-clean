@@ -1,135 +1,33 @@
-<!-- REFERENCES -->
 <section id="referenciak" class="py-5">
   <div class="container">
-    <h2 class="section-title">Referenciák</h2>
+    <h2 class="section-title text-start mb-5">Referenciák</h2>
 
-    <div class="row g-4 mt-3">
-
-      <!-- Active Syntax -->
-      <div class="col-md-6 col-lg-4">
-        <div class="reference-card p-3 h-100">
-
-
-          <div class="ref-logo-wrapper ">
-            <img src="/assets/img/logo-small-active-syntax.svg" alt="Active Syntax | Software Development"
-              class="ref-logo rounded-circle bg-dark p-4">
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="gallery-container h-100">
+          <div class="gallery-header">
+            <i class="bi bi-images"></i>
+            <h3>Munkáinkról</h3>
+            <p>Betekintés mindennapi precíz tisztítási folyamatainkba.</p>
           </div>
-
-          <div class="ref-body d-flex flex-column align-items-center">
-            <h5 class="title text-emphasis mb-1">Active Syntax</h5>
-            <div class="lead">Portfolio Website</div>
-            <p>Landing page built with Angular and Bootstrap, using a modular,
-              component-based architecture and fully responsive layout. Deployed as a static site on AWS S3 and
-              distributed via CloudFront with manually configured SSL/TLS (HTTPS) and DNS records.
-              Complete UI/UX design, logo, and visual assets were created specifically for this project using GIMP,
-              Inkscape and AI tools in Linux environment.</p>
-
-            <div class="tech-stack">
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>TypeScript</span>
-              <span>Angular</span>
-              <span>Bootstrap</span>
-              <span>Responsive Design</span>
-              <span>AWS S3</span>
-              <span>CloudFront</span>
-              <span>SSL/TLS</span>
-              <span>DNS</span>
-            </div>
-
-            <div class="d-flex flex-row align-items-center">
-              <a href="https://github.com/activesyntax/activesyntax-web" target="_blank"
-                class="btn btn-outline-light  mt-2 me-4">
-                <i class="bi bi-github me-2"></i>
-                View on Github</a>
-            </div>
-
-          </div>
+          
+          <app-gallery [images]="generalImages" mode="thumbnails">
+            </app-gallery>
         </div>
       </div>
 
-      <!-- Folkfiok -->
-      <div class="col-md-6 col-lg-4">
-        <div class="reference-card p-3 h-100">
-
-          <!-- Logo -->
-          <div class="ref-logo-wrapper">
-            <img src="/assets/img/references/folkfiok-logo.png" alt="FolkFiók logo" class="ref-logo rounded-circle">
+      <div class="col-lg-6">
+        <div class="gallery-container h-100 highlight-border">
+          <div class="gallery-header">
+            <i class="bi bi-arrow-left-right"></i>
+            <h3>Előtte - Utána</h3>
+            <p>Látványos különbségek: nézze meg az eredményt saját szemével.</p>
           </div>
 
-          <div class="ref-body d-flex flex-column align-items-center">
-            <h5 class="title text-emphasis mb-1">Folk Fiók</h5>
-            <div class="lead">Heritage Education Website</div>
-            <p>Website for an initiative dedicated to preserving Hungarian folk traditions and rural cultural heritage.
-              It presents the mission, showcases books and educational materials, and provides details on interactive
-              school programs. The design uses a clean, structured layout with folk-inspired visuals, supported by
-              product pages, event listings, video integration, and an intuitive information architecture.</p>
-
-            <div class="tech-stack">
-              <span>HTML</span><span> CSS</span>
-              <span>JavaScript</span>
-              <span> AngularJS</span>
-
-              <span>PHP</span>
-              <span>Code Igniter</span>
-            </div>
-            <div class="d-flex flex-row align-items-center">
-              <!-- <a href="https://web.archive.org/web/20210714085134/http://www.folkfiok.hu" target="_blank" -->
-              <!-- class="btn btn-outline-light  mt-2 me-4"> -->
-              <!-- <i class="bi bi-box-arrow-up-right me-2"></i> -->
-              <!-- Visit Website</a> -->
-
-
-              <div class="d-flex flex-row align-items-center">
-                <a href="https://github.com/activesyntax/folkfiok" target="_blank"
-                  class="btn btn-outline-light  mt-2 me-4">
-                  <i class="bi bi-github me-2"></i>
-                  View on Github</a>
-              </div>
-
-              <app-gallery #folkfiokGallery [images]="folkfiokImages" mode="open-only">
-                <button class="btn btn-outline-light mt-2" (click)="folkfiokGallery.open()">
-                  <i class="bi bi-camera me-2"></i>
-                  Screenshots
-                </button>
-              </app-gallery>
-
-            </div>
-
-          </div>
+          <app-gallery [images]="beforeAfterImages" mode="thumbnails" class="before-after-mode">
+          </app-gallery>
         </div>
       </div>
-
-      <!-- Jakoi Hirmondo -->
-      <div class="col-md-6 col-lg-4">
-        <div class="reference-card p-3 h-100">
-
-          <!-- Logo -->
-          <div class="ref-logo-wrapper">
-            <img src="/assets/img/references/jakoi-hirmondo-crop.png" alt="Jákói Hírmondó" class="ref-logo rounded">
-          </div>
-
-          <div class="ref-body d-flex flex-column align-items-center">
-            <h5 class="title text-emphasis mb-1">Jákói Hírmondó</h5>
-            <div class="lead">Local Newspaper Typesetting</div>
-
-            <p>Complete layout and typesetting services were provided for multiple issues of <span
-                class="font-italic">Jákói Hírmondó</span>, the local newspaper of Bakonyjákó. The work included page
-              composition, typography, visual structure, and
-              print-ready preparation, ensuring a clean, consistent, and reader-friendly design throughout the
-              publication.</p>
-
-            <div class="tech-stack"><span>Scribus</span><span> Gimp</span><span> AI tools</span></div>
-
-            <a href="/assets/data/2025-12-jakoi-hirmondo.pdf" target="_blank" class="btn btn-outline-light  mt-2">
-              <i class="bi bi-download me-2"></i>
-
-              Download Issue 12-2025 (PDF)</a>
-          </div>
-        </div>
-      </div>
-
     </div>
-
   </div>
 </section>
