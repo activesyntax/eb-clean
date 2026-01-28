@@ -46,6 +46,5 @@
 /* Opcionális: Ha valódi ikonokat használsz emoji helyett */
 .benefit-icon img,
 .benefit-icon i {
-  color: #ffcc00;
-  filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.5));
+  /* filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.5)); */
 }
