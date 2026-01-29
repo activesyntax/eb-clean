@@ -10,7 +10,6 @@ import { Gallery, GalleryImage } from '../../gallery/gallery'; // Importáljuk a
 })
 export class References {
   
-  // 1. Általános munkálatok galéria (a generált képek)
   generalImages: GalleryImage[] = [
     {
       large: '/assets/img/references/napelem-tisztitas.png',
@@ -38,31 +37,30 @@ export class References {
     }
   ];
 
-  // 2. Előtte-Utána galéria (a meglévő folkfiok referenciák)
   beforeAfterImages: GalleryImage[] = [
-    {
-      large: '/assets/img/references/folkfiok-01-01.jpeg',
-      thumb: '/assets/img/references/thumbs/folkfiok-01-01.jpeg',
-      width: 1064,
-      height: 841
-    },
-    {
-      large: '/assets/img/references/folkfiok-01-02.jpeg',
-      thumb: '/assets/img/references/thumbs/folkfiok-01-02.jpeg',
-      width: 1064,
-      height: 1068
-    },
-    {
-      large: '/assets/img/references/folkfiok-02.jpeg',
-      thumb: '/assets/img/references/thumbs/folkfiok-02.jpeg',
-      width: 800,
-      height: 738
-    },
-    {
-      large: '/assets/img/references/folkfiok-03.jpeg',
-      thumb: '/assets/img/references/thumbs/folkfiok-03.jpeg',
-      width: 800,
-      height: 668
-    }
+  {
+    large: '/assets/img/references/napelem-elotte-utana.png',
+    thumb: '/assets/img/references/napelem-elotte-utana.png',
+    width: 1024,
+    height: 1024
+  },
+  {
+    large: '/assets/img/references/fal-elotte-utana.png',
+    thumb: '/assets/img/references/fal-elotte-utana.png',
+    width: 1024,
+    height: 1024
+  },
+  {
+    large: '/assets/img/references/terko-elotte-utana.png',
+    thumb: '/assets/img/references/terko-elotte-utana.png',
+    width: 1024,
+    height: 1024
+  },
+  {
+    large: '/assets/img/references/sirko-elotte-utana.png',
+    thumb: '/assets/img/references/sirko-elotte-utana.png',
+    width: 1024,
+    height: 1024
+  }
   ];
 }
