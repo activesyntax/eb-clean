@@ -23,13 +23,30 @@ h5 {
 }
 
 a {
-  color: var(--link-text-color);
+  color: inherit;
+  /* Alapból felveszi a környező szöveg színét */
   text-decoration: none;
+  padding-bottom: 0.2rem;
+  transition: color var(--transition-speed) ease-in-out,
+    filter var(--transition-speed) ease-in-out;
 }
 
+/* Általános hover állapot minden linkre */
 a:hover {
-  color: var(--primary-color);
+  color: var(--secondary-color);
+  filter: brightness(1.1);
   text-decoration: none;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+/* Specifikus osztály, ha valahol hangsúlyosabb linket szeretnél (pl. footer) */
+.link-highlight {
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.link-highlight:hover {
+  filter: brightness(1.2);
 }
 
 a.inline-link {
@@ -105,6 +122,9 @@ a.inline-link:hover {
   /* text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); */
 }
 
+.fg-secondary {
+  color: var(--secondary-color);
+}
 
 /* Közös stílus a gomboknak */
 .btn-cta {
