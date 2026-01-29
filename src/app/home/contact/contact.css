@@ -35,3 +35,18 @@
 #contact .card-body h2 {
   color: var(--highlight-text-color);
 }
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+  /* Fél-átlátszó fehér */
+  opacity: 1;
+  /* Firefox fix */
+}
+
+.form-control:focus::placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.form-control {
+  color: white !important;
+}
