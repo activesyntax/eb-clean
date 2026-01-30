@@ -62,22 +62,29 @@ a.inline-link:hover {
 
 .section-title {
   font-size: var(--section-font-size);
-  padding-left: 5px;
+  padding-left: 1.2rem;
   margin-bottom: 1rem;
-  color: var(--highlight-text-color)
+  color: var(--highlight-text-color);
+  position: relative;
 }
 
 .section-title::before {
-  content: "|";
-  display: inline-block;
-  color: var(--primary-color);
-  /* color: var(--secondary-color); */
-  margin-right: 12px;
-  padding-bottom: 20px;
-  font-weight: 555;
-  vertical-align: baseline;
-  position: relative;
-  top: -0.10em;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  /* fine-tune vertical alignment */
+  width: 8px;
+  height: 1em;
+
+  background-color: var(--primary-color);
+  /* color: var(--primary-color); */
+  /* margin-right: 12px; */
+  /* padding-bottom: 20px; */
+  /* font-weight: 555; */
+  /* vertical-align: baseline; */
+  /* position: relative; */
+  /* top: -0.10em; */
 
   /* 1. The Size */
   /* width: 26pt; */
