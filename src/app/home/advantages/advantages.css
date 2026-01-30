@@ -4,7 +4,8 @@
 }
 
 .benefit-card {
-  background: #242830;
+
+  background: var(--secondary-background-light);
   /* Kicsit világosabb szürke a kártyáknak */
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 15px;

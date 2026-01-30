@@ -1,7 +1,6 @@
 #contact {
   font-size: var(--larger-font-size);
   border-top: var(--primary-border);
-  background-color: black;
 }
 
 #contact a {

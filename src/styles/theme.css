@@ -1,8 +1,10 @@
 :root {
   /* Backgrounds */
-  --primary-background: #0A0E14;
+  --primary-background: #020202;
   /* near-black with blue bias */
-  --secondary-background: #121826;
+  /* --secondary-background: #121826; */
+  --secondary-background: #1A2030;
+  --secondary-background-light: #242830;
   /* dark navy */
   --dark-background: #05070A;
   /* true dark sections / footer */

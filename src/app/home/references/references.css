@@ -1,10 +1,5 @@
-#referenciak {
-  background-color: #1a1d23;
-  color: #fff;
-}
-
 .gallery-container {
-  background: #242830;
+  background: var(--secondary-background-light);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   padding: 30px;
