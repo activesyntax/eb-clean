@@ -35,36 +35,38 @@
         </div>
       </div>
 
+
       <div id="arajanlat" class="col-md-7">
         <div class="card bg-dark border-secondary shadow-lg">
           <div class="card-body p-4 p-md-5">
-            <h3 class="fw-bold mb-3 text-white">Árajánlat kérése</h3>
-            <p class="text-secondary mb-4">
-              Töltse ki az alábbi űrlapot, és munkatársunk 24 órán belül felveszi Önnel a kapcsolatot a részletekkel.
+
+            <div class="mb-4">
+              <h3 class="display-3 fw-bold text-white mb-2 text-center">Árajánlat kérése</h3>
+            </div>
+
+            <p class="text-secondary mb-4 text-start">
+              Kérjük, adja meg adatait és a feladat leírását az alábbi minta szerint:
             </p>
 
-            <form>
-              <div class="mb-3">
-                <label for="contactInfo" class="form-label text-light">Elérhetőség (Email vagy Telefon)</label>
-                <input type="text" class="form-control bg-dark text-light border-secondary" id="contactInfo"
-                  placeholder="Pl: +36 20 123 4567" required>
-              </div>
-
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
               <div class="mb-4">
-                <label for="message" class="form-label text-light">Üzenet (Helyszín, felület típusa, mérete)</label>
-                <textarea class="form-control bg-dark text-light border-secondary" id="message" rows="4"
-                  placeholder="Írja le röviden, miben segíthetünk..." required></textarea>
+                <label for="fullMessage" class="form-label text-light">Üzenet: </label>
+                <textarea formControlName="message"
+                  class="form-control bg-dark text-light border-secondary custom-textarea" id="fullMessage" rows="8">
+                </textarea>
               </div>
 
               <div class="d-grid">
-                <button type="submit" class="btn btn-cta primary btn-lg fw-bold">
+                <button type="submit" [disabled]="contactForm.invalid" class="btn btn-cta primary btn-lg fw-bold">
                   Árajánlat kérése
                 </button>
               </div>
             </form>
+
           </div>
         </div>
       </div>
+
 
     </div>
   </div>
