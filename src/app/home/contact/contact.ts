@@ -16,8 +16,6 @@ export class Contact {
   contactForm: FormGroup;
 
   constructor() {
-    // A mintaüzenet definiálása
-// A mintaüzenet frissítése
 const pattern = `Tisztelt EB-Clean!
 
 Szeretnék árajánlatot kérni egy családi ház napelem tisztítására Bakonyjákón. A rendszer 12 paneles.
