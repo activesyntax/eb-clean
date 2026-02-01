@@ -27,6 +27,10 @@
   max-height: 400px;
 }
 
+#arajanlat {
+  /* Értéke legyen kb. a menüsor magassága + 20-30px extra hely */
+  scroll-margin-top: 50px;
+}
 
 #contact .card .theme-border {
   border-color: var(--primary-color);
