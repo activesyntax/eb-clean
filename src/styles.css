@@ -11,6 +11,17 @@ body {
   font-optical-sizing: auto;
 }
 
+
+.bg-secondary-dark {
+  background-color: var(--secondary-background);
+}
+
+.long-text {
+  /* color: var(--long-text-color); */
+  color: red;
+
+}
+
 h1,
 h2,
 h3,

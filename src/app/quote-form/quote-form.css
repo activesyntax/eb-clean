@@ -1,0 +1,26 @@
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+  /* Fél-átlátszó fehér */
+  opacity: 1;
+  /* Firefox fix */
+}
+
+.form-control:focus::placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.form-control {}
+
+/* Textarea finomítás */
+.custom-textarea {
+  border-color: rgba(255, 255, 255, 0.2);
+  line-height: 1.6;
+  font-family: Courier, monospace;
+  /* Segít a minta követésében */
+}
+
+.custom-textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.05);
+}

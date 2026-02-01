@@ -4,19 +4,17 @@
 
       <div class="col-md-5">
         <h2 class="section-title mb-4">Kapcsolat</h2>
-        <p class="lead mb-4">
+        <p class="text-secondary mb-4 fs-5">
           Kérdése van? Keressen minket bizalommal az alábbi elérhetőségeken, vagy látogasson el közösségi oldalunkra!
         </p>
 
         <div class="contact-links">
           <p class="mb-3">
-            <span class="text-secondary d-block fw-bold">Kapcsolattartó:
-            </span>
             <span class="text-uppercase fw-bold">Erős Balázs</span>
           </p>
           <p class="mb-3">
-            <a href="mailto:eb-clean@gmail.com" class="text-decoration-none text-light">
-              <i class="bi bi-envelope me-3 fg-secondary"></i>eb-clean@gmail.com
+            <a href="mailto:eros.balazs@eb-clean.hu" class="text-decoration-none text-light">
+              <i class="bi bi-envelope me-3 fg-secondary"></i>eros.balazs@eb-clean.hu
             </a>
           </p>
           <p class="mb-3">
@@ -53,20 +51,7 @@
               Kérjük, adja meg adatait és a feladat leírását az alábbi minta szerint:
             </p>
 
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-              <div class="mb-4">
-                <label for="fullMessage" class="form-label text-light">Üzenet: </label>
-                <textarea formControlName="message"
-                  class="form-control bg-dark text-light border-secondary custom-textarea" id="fullMessage" rows="8">
-                </textarea>
-              </div>
-
-              <div class="d-grid">
-                <button type="submit" [disabled]="contactForm.invalid" class="btn btn-cta primary btn-lg fw-bold">
-                  Árajánlat kérése
-                </button>
-              </div>
-            </form>
+            <app-quote-form></app-quote-form>
 
           </div>
         </div>
