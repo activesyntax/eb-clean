@@ -15,7 +15,7 @@
 .custom-textarea {
   border-color: rgba(255, 255, 255, 0.2);
   line-height: 1.6;
-  font-family: Courier, monospace;
+  font-family: var(--technical-font);
   /* Segít a minta követésében */
 }
 
