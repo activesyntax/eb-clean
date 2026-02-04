@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 
 @Component({
   selector: 'app-quote-form',
-  imports: [CommonModule, ReactiveFormsModule, QuoteForm],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './quote-form.html',
   styleUrl: './quote-form.css',
 })
