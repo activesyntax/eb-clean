@@ -13,12 +13,14 @@
             <span class="text-uppercase fw-bold">Erős Balázs</span>
           </p>
           <p class="mb-3">
-            <a href="mailto:eros.balazs@eb-clean.hu" class="text-decoration-none text-light">
-              <i class="bi bi-envelope me-3 fg-secondary"></i>eros.balazs@eb-clean.hu
+
+            <a [href]="'mailto:' + user() + '@' + domain()" target="_blank" class="text-decoration-none text-light"><i
+                class="bi bi-envelope me-3 fg-secondary"></i>{{ user()
+              }}@{{ domain() }}
             </a>
           </p>
           <p class="mb-3">
-            <a href="tel:+36308423553" class="text-decoration-none text-light">
+            <a href="tel:+36706727251" class="text-decoration-none text-light">
               <i class="bi bi-telephone me-3 fg-secondary"></i>+36 70 672 7251
             </a>
           </p>

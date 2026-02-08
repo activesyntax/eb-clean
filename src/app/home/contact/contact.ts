@@ -1,4 +1,4 @@
-import { Component, } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { QuoteForm } from '../../quote-form/quote-form';
 
 @Component({
@@ -9,4 +9,6 @@ import { QuoteForm } from '../../quote-form/quote-form';
   styleUrl: './contact.css',
 })
 export class Contact {
+  user = signal('eros.balazs');
+  domain = signal('eb-clean.hu');
 }
