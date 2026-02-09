@@ -24,8 +24,8 @@ export class QuoteForm implements OnInit {
 
   ngOnInit() {
     this.http.get<{quoteTemplateMessage: string}>('assets/data/messages.json').subscribe(data => {
-      const formattedMessage = data.quoteTemplateMessage.replace(/\\n/g, '\n');
-      this.contactForm.get('message')?.setValue(formattedMessage);
+      const message = data.quoteTemplateMessage; 
+      this.contactForm.get('message')?.setValue(message);
     });
   }
 
