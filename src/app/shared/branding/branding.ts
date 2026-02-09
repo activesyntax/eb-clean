@@ -4,7 +4,7 @@ export const Branding = {
     slogan: 'Gondos tisztítás, látható eredmény.',
     sloganHtml: '<span class="text-emphasis">Gondos tisztítás.</span> Látható eredmény.',
     title: 'EB Clean - Gondos tisztítás, látható eredmény.',
-    description: 'Napelemek, tetők, falfelületek, betonos felületek, térkövek, síremlékek professzionális tiszítása.'
+    description: 'Napelemek, tetők, falak, betonos felületek, térkövek, síremlékek professzionális tiszítása.'
   },
   logo: {
     src: 'assets/img/eb-clean-logo.png',
