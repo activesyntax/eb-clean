@@ -1,0 +1,403 @@
+[33mcommit c7566be978f1f32d38e55156233d557b0838abfd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Thu Feb 12 09:11:24 2026 +0100
+
+    Revert "add name, email, phone fields"
+    
+    This reverts commit 48ac5ad07bf500dc30bccf85570bda615010066e.
+
+[33mcommit 48ac5ad07bf500dc30bccf85570bda615010066e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Thu Feb 12 08:48:36 2026 +0100
+
+    add name, email, phone fields
+
+[33mcommit e2f06c403f676ac995dade03aa77b3c8516a5544[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Mon Feb 9 08:43:10 2026 +0100
+
+    remove replace logic from quote form. modify messages.json
+
+[33mcommit 95ec78793c320fcd396a3cd5ba64aeee503d0d32[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Mon Feb 9 08:36:06 2026 +0100
+
+    correct newlines
+
+[33mcommit 7c933403927f115b39d8490a90e1d1c898de2b80[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Mon Feb 9 08:28:54 2026 +0100
+
+    read quote template form json
+
+[33mcommit 91b941049e9a7fa3e93dcbd670b2143b324fdb58[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Mon Feb 9 06:37:14 2026 +0100
+
+    extended services
+
+[33mcommit da8388446ea1a361b608605267176c3be1e3794a[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sun Feb 8 22:23:53 2026 +0100
+
+    encrypt email and small modifications
+
+[33mcommit b15da3b27cab1a5f551b75865f04093d4f72ce11[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Wed Feb 4 08:53:52 2026 +0100
+
+    s3-cloudfront.md documetation added
+
+[33mcommit a2eab946d5442af4dacd2b783a923a43c0707e74[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Wed Feb 4 07:24:17 2026 +0100
+
+    unused import removed
+
+[33mcommit 65c6ad52db4cfafec16323c88f8d38901266bfe5[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Tue Feb 3 19:22:53 2026 +0100
+
+    favicon added
+
+[33mcommit 46aed4b700e166803985acc53870faa7550531df[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sun Feb 1 21:31:18 2026 +0100
+
+    monospace font for quote
+
+[33mcommit 356f749589d375ddaf9f76fa52fd1ba67128f36c[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sun Feb 1 21:27:18 2026 +0100
+
+    quote-form component
+
+[33mcommit 9b3f85a13905ca92663894a003184fffc9d86fc2[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sun Feb 1 18:12:37 2026 +0100
+
+    contact person
+
+[33mcommit 6a1a96e72f2650fb37cbb5c36da9d2465b931121[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sun Feb 1 11:02:23 2026 +0100
+
+    quote scroll margin
+
+[33mcommit ddca66cfcbfc7bb6ce02ff40b0319c18c7412137[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sun Feb 1 10:51:55 2026 +0100
+
+    remov comments
+
+[33mcommit b4af63819010fcfd2d8dafa2573d43b704070cfa[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sat Jan 31 23:09:23 2026 +0100
+
+    quote redesign
+
+[33mcommit a7a1f4330b076c5e682c69980f95ef8ad27a8503[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sat Jan 31 22:12:26 2026 +0100
+
+    footer text update
+
+[33mcommit 377509e08848b18bf2329a745ca975fe9fc890fc[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Fri Jan 30 10:25:00 2026 +0100
+
+    consolidating background colors
+
+[33mcommit 56eadb1bfe81ef9b912ebdb3719d002da698c2c0[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Fri Jan 30 07:34:24 2026 +0100
+
+    section title decoration fix
+
+[33mcommit 572103fe0d512ff2d75a635f7d6d67b2463a6ce3[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Thu Jan 29 20:57:04 2026 +0100
+
+    footer
+
+[33mcommit fdd78c46dc36863b9089db5d2e7e6020c34bfa63[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Thu Jan 29 09:24:27 2026 +0100
+
+    contact section
+
+[33mcommit e057c8c682c5fef48d43bfdb2cc5e0b5a05cc038[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Thu Jan 29 08:00:12 2026 +0100
+
+    before-after images
+
+[33mcommit 9a42c6d525941d4644730169f5ba5ed3fae51bd3[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Wed Jan 28 21:12:42 2026 +0100
+
+    rename experience compoenent to advantages
+
+[33mcommit b0b6b2f9f3032fc5f2819b8a3f2e3643a92f62f9[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Wed Jan 28 20:49:49 2026 +0100
+
+    remove unused css
+
+[33mcommit d1e4418894ea424065f5276a7126183fdc582950[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Wed Jan 28 16:24:20 2026 +0100
+
+    Add files via upload
+
+[33mcommit 2489f981cfa0c3f0fae7a732a5ab1eeb9e483730[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Wed Jan 28 13:09:28 2026 +0100
+
+    references and advantages improvements
+
+[33mcommit c2c961dd6ea06a0d8f4c8cdf97415ba75cb2c089[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Wed Jan 28 11:47:30 2026 +0100
+
+    Add files via upload
+
+[33mcommit 3cc814f2b4ec74711fc0848aaa21938e157f6ba2[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Wed Jan 28 11:46:43 2026 +0100
+
+    Add files via upload
+
+[33mcommit cdfee5a76e247f5bcbe6549221ed29b1d8fc84f6[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Wed Jan 28 11:40:52 2026 +0100
+
+    Add files via upload
+
+[33mcommit eb06b93dce1b5503541708c9ca8d438e6acfa45f[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Wed Jan 28 11:22:59 2026 +0100
+
+    Update references.css
+
+[33mcommit 4fef21064133970560942f2360d5df2cbcc49417[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Wed Jan 28 11:21:59 2026 +0100
+
+    Update references.html
+
+[33mcommit b8eeff1a0366335bf402d12f9cf0273c1dc75e62[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Mon Jan 26 23:39:32 2026 +0100
+
+    advantages section
+
+[33mcommit c7cee25ddf8766f354c54438dfd8088401cee49d[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Mon Jan 26 23:20:39 2026 +0100
+
+    improving navbar
+
+[33mcommit 088216c5177bc77943035c3dc3f05dbee0e3ad72[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Mon Jan 26 16:25:03 2026 +0100
+
+    Update README.md
+
+[33mcommit f0bc7b7a1ad2b298a836358be2184e03edc99f1f[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sun Jan 25 23:55:50 2026 +0100
+
+    service html and css
+
+[33mcommit 8c89c157b0a1cccd978fc59e001d94affb182bcc[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sun Jan 25 23:16:50 2026 +0100
+
+    service images added
+
+[33mcommit e35122724c6a0dede8141201bb078cf8a8ac42b4[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sat Jan 24 23:44:30 2026 +0100
+
+    section title design finished
+
+[33mcommit 2da7743bbf486a3dd3412c118b214160f0943483[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sat Jan 24 06:32:57 2026 +0100
+
+    smaller slogan letters
+
+[33mcommit 3a309a3180d3018ee302853080a78935e2cbc6e2[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Fri Jan 23 23:42:56 2026 +0100
+
+    better cta button colorsÁ
+
+[33mcommit 580f25760b1d6f988b192feb86fd28f7f4c67beb[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Fri Jan 23 22:50:42 2026 +0100
+
+    navbar link  opacity
+
+[33mcommit 5bea58e30797df80233565bcd795291cf844dd9b[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Fri Jan 23 22:45:53 2026 +0100
+
+    responsive hero section, color correction
+
+[33mcommit 82c0e0ac46eec220c6462f7b220ca5d4e04c2d54[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Fri Jan 23 20:48:46 2026 +0100
+
+    update angular to 21.1.1.1 again
+
+[33mcommit 0f909d9f3f809779a2528951b7344a71fcf4fef4[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Fri Jan 23 20:35:39 2026 +0100
+
+    chore: stop tracking node_modules
+
+[33mcommit e80dc75056f2c8751ad837b794728544555fd248[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Fri Jan 23 20:03:39 2026 +0100
+
+    update angular to 21.1.1.1
+
+[33mcommit e9056088a231616a39a5be0a6287f2629d8af33f[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Fri Jan 23 12:53:54 2026 +0100
+
+    hero page with solar-before-after and centered logo
+
+[33mcommit cf4fc04910483bc1e1253a379c7b3beb372c780b[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Thu Jan 22 23:52:39 2026 +0100
+
+    new before-after image
+
+[33mcommit 0910b98148fb0a8674f4387c83e40555968cef20[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sat Jan 17 22:48:47 2026 +0100
+
+    new concept containing before-after image
+
+[33mcommit bc5cbdd9c96f8f521f8116c500a0bfe1bbe93f23[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sat Jan 17 21:17:05 2026 +0100
+
+    reference button
+
+[33mcommit 7e251289568a89f08689f41d19ac7826133f62dd[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sat Jan 17 21:02:29 2026 +0100
+
+    glass effect
+
+[33mcommit 612310c45be4f0e38b04917b698d6899c6c0d773[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sat Jan 17 16:03:34 2026 +0100
+
+    slogan design 2
+
+[33mcommit 58bd22e7a25a5065982ae763d239763383f21d3d[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sat Jan 17 09:55:28 2026 +0100
+
+    slogan design
+
+[33mcommit c5e1b7ed3960e347733a0040542b561a13160ec5[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sat Jan 17 09:12:16 2026 +0100
+
+    navbar adjusment
+
+[33mcommit d74bf0041ffed91669b259c5bc20c6ab01166502[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Sat Jan 17 07:58:45 2026 +0100
+
+    stone background and lexend font
+
+[33mcommit af0271d5170bd133fd412e91a187862d25240d38[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Fri Jan 16 23:47:04 2026 +0100
+
+    marble logo background
+
+[33mcommit 57c6545ed1b2ecc89b53d9847b350f2f4756d26c[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Thu Jan 15 23:09:48 2026 +0100
+
+    logo improvements
+
+[33mcommit cba7a02f6eb8559334316535873feeb56adf0067[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Thu Jan 15 05:14:29 2026 +0100
+
+    logo background effects
+
+[33mcommit c8fbf6b1938820f977c627c399f016ead2fe8b08[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Thu Jan 15 00:00:25 2026 +0100
+
+    improved logo and hero backgroudn
+
+[33mcommit b7d33c0c33d6b52820e094f387da561d06726212[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Mon Jan 12 13:32:46 2026 +0100
+
+    using shared branding component
+
+[33mcommit 52613b3e2b7fd094c910cde62dd13e1cad53c547[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Mon Jan 12 05:51:32 2026 +0100
+
+    Update README.md
+
+[33mcommit a95075e4864a0673d1d3c2693352e015a4a41cdb[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Fri Jan 9 21:06:11 2026 +0100
+
+    logo added to hero section
+
+[33mcommit 880111de50e52d431192ed31c90162b4c9e6a6b8[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Fri Jan 9 20:23:47 2026 +0100
+
+    logo design
+
+[33mcommit 4b2f2c6d66c33fd0e323ac597fb3f0ec1a2401fa[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Fri Jan 9 05:50:22 2026 +0100
+
+    Branding file added
+
+[33mcommit 2273053c6cf09f27c3b000e28838398fe2705fea[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Thu Jan 8 23:27:32 2026 +0100
+
+    Quick color adjustment
+
+[33mcommit 09859dc6bff80ac426165cabfba47cf777d1f8d5[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Thu Jan 8 23:10:53 2026 +0100
+
+    Rebranding started
+
+[33mcommit 70db4f1fcbe8f23f9cde9d939f37430f469857b0[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Tue Jan 6 04:46:07 2026 +0100
+
+    Update readme
+
+[33mcommit 52b1333e8e69f756de88883ad359820642845b2b[m
+Author: Putz József <putzjozsi@gmail.com>
+Date:   Mon Jan 5 23:57:03 2026 +0100
+
+    Initial commit
+
+[33mcommit f1f464149e7103c79588f2203112d0ba7e89109e[m
+Author: Active Syntax <dev@activesyntax.net>
+Date:   Mon Jan 5 23:44:06 2026 +0100
+
+    Initial commit
