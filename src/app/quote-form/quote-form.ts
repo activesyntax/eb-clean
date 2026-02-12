@@ -18,10 +18,7 @@ export class QuoteForm implements OnInit {
 
   constructor() {
     this.contactForm = this.fb.group({
-      message: ['', [Validators.required, Validators.minLength(20)]],
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['']
+      message: ['', [Validators.required, Validators.minLength(20)]]
     });
   }
 
@@ -34,7 +31,7 @@ export class QuoteForm implements OnInit {
 
   onSubmit() {
     if (this.contactForm.valid) {
-      console.log('Küldendő adatok:', this.contactForm.value);
+      console.log('Küldendő adatok:', this.contactForm.value.message);
       // Itt jöhet a text parsing vagy a beküldés
     }
   }
