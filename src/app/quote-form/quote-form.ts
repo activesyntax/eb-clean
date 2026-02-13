@@ -26,9 +26,6 @@ export class QuoteForm implements OnInit {
   constructor() {
     this.contactForm = this.fb.group({
       message: ['', [Validators.required, Validators.minLength(20)]],
-      name: ['', Validators.required],
-      email: ['', [Validators.email]],
-      phone: ['']
     });
   }
 
@@ -42,27 +39,29 @@ export class QuoteForm implements OnInit {
 
   onSubmit() {
     this.submissionStatus = null;
-    this.contactError = null;
+    // this.contactError = null;
 
-    if (this.contactForm.invalid) {
-      if (this.contactForm.get('email')?.hasError('email')) {
-        this.contactError = 'Kérjük, adjon meg egy valós email címet.';
-      } else {
-        this.contactError = 'Kérjük, töltse ki a kötelező mezőket.';
-      }
-      return;
-    }
+    // if (this.contactForm.invalid) {
+    //   if (this.contactForm.get('email')?.hasError('email')) {
+    //     this.contactError = 'Kérjük, adjon meg egy valós email címet.';
+    //   } else {
+    //     this.contactError = 'Kérjük, töltse ki a kötelező mezőket.';
+    //   }
+    //   return;
+    // }
 
     const formValue = this.contactForm.value;
     const extractedContacts = this.extractContactInfo(formValue.message);
 
-    const finalEmail = formValue.email || extractedContacts.email;
-    const finalPhone = formValue.phone || extractedContacts.phone;
+    const finalEmail = extractedContacts.email;
+    const finalPhone = extractedContacts.phone;
+    // const finalEmail = formValue.email || extractedContacts.email;
+    // const finalPhone = formValue.phone || extractedContacts.phone;
 
-    if (!finalEmail && !finalPhone) {
-      this.contactError = 'Kérjük, adja meg email címét vagy telefonszámát, hogy felvehessük Önnel a kapcsolatot.';
-      return;
-    }
+    // if (!finalEmail && !finalPhone) {
+    //   this.contactError = 'Kérjük, adja meg email címét vagy telefonszámát, hogy felvehessük Önnel a kapcsolatot.';
+    //   return;
+    // }
 
     this.confirmationData = {
       email: finalEmail,
@@ -97,6 +96,7 @@ export class QuoteForm implements OnInit {
         this.isSubmitting = false;
       }
     });
+
   }
 
   private extractContactInfo(text: string): { email?: string, phone?: string } {

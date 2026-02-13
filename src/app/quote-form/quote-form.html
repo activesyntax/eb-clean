@@ -1,19 +1,7 @@
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   <div class="mb-4">
     <textarea formControlName="message" class="form-control bg-dark text-white custom-textarea long-text"
-      id="fullMessage" rows="10"></textarea>
-  </div>
-
-  <div class="mb-4">
-    <input formControlName="name" type="text" class="form-control bg-dark text-white" placeholder="Szabó János">
-  </div>
-
-  <div class="mb-4">
-    <input formControlName="email" type="email" class="form-control bg-dark text-white" placeholder="szabo.janos@gmail.com">
-  </div>
-
-  <div class="mb-4">
-    <input formControlName="phone" type="tel" class="form-control bg-dark text-white" placeholder="+36/20 123 4567">
+      id="fullMessage" rows="12"></textarea>
   </div>
 
   <div *ngIf="contactError" class="alert alert-danger">
@@ -34,14 +22,14 @@
   <div class="modal-dialog">
     <div class="modal-content bg-dark text-white">
       <div class="modal-header">
-        <h5 class="modal-title" id="confirmationModalLabel">Megerősítés</h5>
+        <h5 class="modal-title" id="confirmationModalLabel">Az Ön elérhetőségei:</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div *ngIf="isSubmitting">
           <div class="d-flex justify-content-center">
             <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
+              <span class="visually-hidden">Kérjük, várjon...</span>
             </div>
           </div>
         </div>
@@ -54,25 +42,25 @@
 
         <div *ngIf="submissionStatus === 'error'">
           <div class="alert alert-danger">
-            Hiba történt a kérés elküldése során. Kérjük, próbálja újra később.
+            Hiba történt a kérés elküldése során. Kérjük, küldjön emailt az alábbi email címre: <a
+              href="mailto:eros.balazs@eb-clean.hu">eros.balazs@eb-clean.hu</a>.
           </div>
         </div>
 
         <div *ngIf="!isSubmitting && !submissionStatus && confirmationData">
-          <p>Kérjük, erősítse meg a küldendő adatokat:</p>
+          <!-- <p>Az Ön elérhetőségei:</p> -->
           <ul>
-            <li *ngIf="confirmationData.email"><strong>Email:</strong> {{ confirmationData.email }}</li>
-            <li *ngIf="confirmationData.phone"><strong>Telefonszám:</strong> {{ confirmationData.phone }}</li>
+            <li *ngIf="confirmationData.email">{{ confirmationData.email }}</li>
+            <li *ngIf="confirmationData.phone">{{ confirmationData.phone }}</li>
           </ul>
-          <p><strong>Üzenet:</strong></p>
-          <p>{{ confirmationData.message }}</p>
+          <!-- <p><strong>Üzenet:</strong></p> -->
+          <!-- <p>{{ confirmationData.message }}</p> -->
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégsem</button>
-        <button type="button" class="btn btn-primary" (click)="sendRequest()"
-          [disabled]="isSubmitting || submissionStatus === 'success'">
-          Küldés
+        <button type="button" class="btn btn-primary" (click)="sendRequest()" [disabled]="isSubmitting">
+          Adatok rendben, küldés
         </button>
       </div>
     </div>
