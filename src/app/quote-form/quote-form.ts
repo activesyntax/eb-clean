@@ -1,7 +1,8 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { of, delay } from 'rxjs';
 
 declare var bootstrap: any;
 
@@ -13,15 +14,16 @@ declare var bootstrap: any;
 })
 export class QuoteForm implements OnInit {
 
+  user = signal('eros.balazs');
+  domain = signal('eb-clean.hu');
+
   private fb = inject(FormBuilder);
   private http = inject(HttpClient);
 
   contactForm: FormGroup;
   confirmationModal: any;
-  isSubmitting = false;
-  submissionStatus: 'success' | 'error' | null = null;
-  confirmationData: { email?: string, phone?: string, message: string } | null = null;
-  contactError: string | null = null;
+  submissionStatus: 'waiting-for-input' | 'submitting'| 'missing-contact' | 'success' | 'error' = 'waiting-for-input' ;
+  contactData: { email?: string, phone?: string, message: string } | null = null;
 
   constructor() {
     this.contactForm = this.fb.group({
@@ -34,66 +36,70 @@ export class QuoteForm implements OnInit {
       const message = data.quoteTemplateMessage;
       this.contactForm.get('message')?.setValue(message);
     });
-    this.confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+  }
+
+
+  getMockData() {
+    return of({ id: 1, name: 'Test Data' }).pipe(
+      delay(3000) 
+    );
   }
 
   onSubmit() {
-    this.submissionStatus = null;
-    // this.contactError = null;
-
-    // if (this.contactForm.invalid) {
-    //   if (this.contactForm.get('email')?.hasError('email')) {
-    //     this.contactError = 'Kérjük, adjon meg egy valós email címet.';
-    //   } else {
-    //     this.contactError = 'Kérjük, töltse ki a kötelező mezőket.';
-    //   }
-    //   return;
-    // }
+    this.submissionStatus = 'waiting-for-input';
 
     const formValue = this.contactForm.value;
     const extractedContacts = this.extractContactInfo(formValue.message);
 
-    const finalEmail = extractedContacts.email;
-    const finalPhone = extractedContacts.phone;
-    // const finalEmail = formValue.email || extractedContacts.email;
-    // const finalPhone = formValue.phone || extractedContacts.phone;
+    const email = extractedContacts.email;
+    const phone = extractedContacts.phone;
 
-    // if (!finalEmail && !finalPhone) {
-    //   this.contactError = 'Kérjük, adja meg email címét vagy telefonszámát, hogy felvehessük Önnel a kapcsolatot.';
-    //   return;
-    // }
-
-    this.confirmationData = {
-      email: finalEmail,
-      phone: finalPhone,
-      message: formValue.message
-    };
-
-    this.confirmationModal.show();
-  }
-
-  sendRequest() {
-    if (!this.confirmationData) {
+    console.log('email: ' + email);
+    
+    if (!email && !phone) {
+      this.submissionStatus = 'missing-contact'
       return;
     }
 
-    this.isSubmitting = true;
-    const apiUrl = 'https://4qnl1taa5i.execute-api.eu-central-1.amazonaws.com/prod/quote-requests';
-    const requestBody = {
-      email: this.confirmationData.email,
-      phone: this.confirmationData.phone,
-      message: this.confirmationData.message
+
+    this.contactData = {
+      email: email,
+      phone: phone,
+      message: formValue.message
     };
 
-    this.http.post(apiUrl, requestBody).subscribe({
+    // this.sendRequest();
+
+    this.submissionStatus = 'error';
+
+    // delay(3000);
+    
+    // this.submissionStatus = 'error'
+  }
+
+  sendRequest() {
+    if (!this.contactData) {
+      return;
+    }
+
+    this.submissionStatus = 'submitting'
+
+    const apiUrl = 'https://4qnl1taa5i.execute-api.eu-central-1.amazonaws.com/prod/quote-requests';
+
+    const wrongApiUrl = "https://wrongurl.asdf"
+
+    const requestBody = {
+      email: this.contactData.email,
+      phone: this.contactData.phone,
+      message: this.contactData.message
+    };
+
+    this.http.post(wrongApiUrl, requestBody).subscribe({
       next: () => {
         this.submissionStatus = 'success';
-        this.isSubmitting = false;
-        this.contactForm.reset();
       },
       error: () => {
         this.submissionStatus = 'error';
-        this.isSubmitting = false;
       }
     });
 

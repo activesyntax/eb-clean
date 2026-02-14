@@ -4,8 +4,38 @@
       id="fullMessage" rows="12"></textarea>
   </div>
 
-  <div *ngIf="contactError" class="alert alert-danger">
-    {{ contactError }}
+  <!-- <div *ngIf="contactError" class="alert alert-danger"> -->
+  <!-- {{ contactError }} -->
+  <!-- </div> -->
+
+  <div *ngIf="submissionStatus === 'missing-contact'"
+    class="alert alert-danger alert-dismissible fade show border-start border-4 shadow-sm" role="alert">
+    <strong>Kérjük, adja meg email címét vagy telefonszámát, hogy felvehessük Önnel a kapcsolatot.</strong>
+  </div>
+
+  <div *ngIf="submissionStatus === 'error'"
+    class="alert alert-danger alert-dismissible fade show border-start border-4 shadow-sm" role="alert">
+    <strong>Technikai hiba történt az ajánlatkérés elküldése során.<br> Kérjük, küldjön e-mailt az alábbi címre:<br><br>
+
+      <a [href]="'mailto:' + user() + '@' + domain()" target="_blank" class="text-decoration-none text-dark">{{ user()
+        }}@{{ domain() }}
+      </a>
+    </strong>
+  </div>
+
+  <div *ngIf="submissionStatus === 'submitting'" class="alert alert-info d-flex align-items-center shadow-sm"
+    role="alert">
+    <div class="spinner-border spinner-border-sm me-3" role="status" aria-hidden="true"></div>
+    <div>
+      <strong>Küldés folyamatban...</strong>
+    </div>
+  </div>
+
+  <div *ngIf="submissionStatus === 'success'" class="alert alert-info d-flex align-items-center shadow-sm" role="alert">
+    <div>
+      <strong>Köszönjük érdeklődését!<br>
+        Munkatársunk hamarosan felveszi Önnel a kapcsolatot.</ strong>
+    </div>
   </div>
 
   <div class="d-grid">
@@ -15,54 +45,3 @@
     </button>
   </div>
 </form>
-
-<!-- Confirmation Modal -->
-<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content bg-dark text-white">
-      <div class="modal-header">
-        <h5 class="modal-title" id="confirmationModalLabel">Az Ön elérhetőségei:</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div *ngIf="isSubmitting">
-          <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Kérjük, várjon...</span>
-            </div>
-          </div>
-        </div>
-
-        <div *ngIf="submissionStatus === 'success'">
-          <div class="alert alert-success">
-            Kérését sikeresen elküldtük! Hamarosan felvesszük Önnel a kapcsolatot.
-          </div>
-        </div>
-
-        <div *ngIf="submissionStatus === 'error'">
-          <div class="alert alert-danger">
-            Hiba történt a kérés elküldése során. Kérjük, küldjön emailt az alábbi email címre: <a
-              href="mailto:eros.balazs@eb-clean.hu">eros.balazs@eb-clean.hu</a>.
-          </div>
-        </div>
-
-        <div *ngIf="!isSubmitting && !submissionStatus && confirmationData">
-          <!-- <p>Az Ön elérhetőségei:</p> -->
-          <ul>
-            <li *ngIf="confirmationData.email">{{ confirmationData.email }}</li>
-            <li *ngIf="confirmationData.phone">{{ confirmationData.phone }}</li>
-          </ul>
-          <!-- <p><strong>Üzenet:</strong></p> -->
-          <!-- <p>{{ confirmationData.message }}</p> -->
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégsem</button>
-        <button type="button" class="btn btn-primary" (click)="sendRequest()" [disabled]="isSubmitting">
-          Adatok rendben, küldés
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
