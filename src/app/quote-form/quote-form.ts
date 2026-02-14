@@ -22,7 +22,7 @@ export class QuoteForm implements OnInit {
 
   contactForm: FormGroup;
   confirmationModal: any;
-  submissionStatus: 'waiting-for-input' | 'submitting'| 'missing-contact' | 'success' | 'error' = 'waiting-for-input' ;
+  state: 'waiting-for-input' | 'submitting'| 'missing-contact' | 'success' | 'error' = 'waiting-for-input' ;
   contactData: { email?: string, phone?: string, message: string } | null = null;
 
   constructor() {
@@ -46,7 +46,7 @@ export class QuoteForm implements OnInit {
   }
 
   onSubmit() {
-    this.submissionStatus = 'waiting-for-input';
+    this.state = 'waiting-for-input';
 
     const formValue = this.contactForm.value;
     const extractedContacts = this.extractContactInfo(formValue.message);
@@ -57,7 +57,7 @@ export class QuoteForm implements OnInit {
     console.log('email: ' + email);
     
     if (!email && !phone) {
-      this.submissionStatus = 'missing-contact'
+      this.state = 'missing-contact'
       return;
     }
 
@@ -68,9 +68,9 @@ export class QuoteForm implements OnInit {
       message: formValue.message
     };
 
-    // this.sendRequest();
+    this.sendRequest();
 
-    this.submissionStatus = 'error';
+    // this.submissionStatus = 'error';
 
     // delay(3000);
     
@@ -82,7 +82,7 @@ export class QuoteForm implements OnInit {
       return;
     }
 
-    this.submissionStatus = 'submitting'
+    this.state = 'submitting'
 
     const apiUrl = 'https://4qnl1taa5i.execute-api.eu-central-1.amazonaws.com/prod/quote-requests';
 
@@ -96,10 +96,12 @@ export class QuoteForm implements OnInit {
 
     this.http.post(wrongApiUrl, requestBody).subscribe({
       next: () => {
-        this.submissionStatus = 'success';
+        this.state = 'success';
+        console.log("success");
       },
       error: () => {
-        this.submissionStatus = 'error';
+        this.state = 'error';
+        console.log("error happened");
       }
     });
 
