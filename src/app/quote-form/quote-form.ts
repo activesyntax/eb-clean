@@ -1,8 +1,9 @@
-import { Component, inject, signal, OnInit,  ChangeDetectorRef} from '@angular/core';
+import { Component, inject, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { of, delay } from 'rxjs';
 import { HttpClient } from '@angular/common/http'; 
+import { email } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-quote-form',
@@ -14,14 +15,13 @@ export class QuoteForm implements OnInit {
 
   user = signal('eros.balazs');
   domain = signal('eb-clean.hu');
-
+  state = signal<'idle' | 'submitting' | 'missing-contact'|'invalid-contact' | 'success' | 'error'>('idle');
+ 
   private fb = inject(FormBuilder);
   private http = inject(HttpClient);
-  private cdr = inject(ChangeDetectorRef);
 
   contactForm: FormGroup;
   confirmationModal: any;
-  state: 'idle' | 'submitting'| 'missing-contact' | 'success' | 'error' = 'idle' ;
   contactData: { email?: string, phone?: string, message: string } | null = null;
 
   constructor() {
@@ -45,7 +45,6 @@ export class QuoteForm implements OnInit {
   }
 
   onSubmit() {
-    this.state = 'idle';
 
     const formValue = this.contactForm.value;
     const extractedContacts = this.extractContactInfo(formValue.message);
@@ -54,9 +53,10 @@ export class QuoteForm implements OnInit {
     const phone = extractedContacts.phone;
 
     console.log('email: ' + email);
+    console.log('phone: ' + phone);
     
-    if (!email && !phone) {
-      this.state = 'missing-contact'
+    if (!this.isValidContactData(email, phone)) {
+      this.state.set('missing-contact');
       return;
     }
 
@@ -67,20 +67,40 @@ export class QuoteForm implements OnInit {
     };
 
     this.sendRequest();
-
-    // this.submissionStatus = 'error';
-
-    // delay(3000);
-    
-    // this.submissionStatus = 'error'
   }
+
+  isValidContactData(email?: string, phone?: string): boolean {
+
+    const hasEmail = !!email;
+    const hasPhone = !!phone;
+
+    if(hasEmail && hasPhone)
+      return this.isValidEmail(email) || this.isValidPhone(phone)
+
+    if(hasEmail)
+     return this.isValidEmail(email)
+
+    if(hasPhone)
+      return this.isValidPhone(phone)
+
+      return false
+  }
+
+  isValidEmail(email?: string) : boolean{
+   return  !!email && (email != 'szabo.janos@emailcim.hu')
+  }
+
+  isValidPhone(phone?: string): boolean {
+    const normalizedPhone = phone?.replace(/\s+/g, "");
+    return !!normalizedPhone && normalizedPhone !== '+36201234567';
+  }  
 
   sendRequest() {
     if (!this.contactData) {
       return;
     }
 
-    this.state = 'submitting'
+    this.state.set('submitting');
 
     const apiUrl = 'https://4qnl1taa5i.execute-api.eu-central-1.amazonaws.com/prod/quote-requests';
 
@@ -95,13 +115,14 @@ export class QuoteForm implements OnInit {
 
     this.http.post(requestUrl, requestBody).subscribe({
       next: () => {
-        this.state = 'success';
-        this.cdr.detectChanges();
+
+        this.state.set('success'); 
+        // this.cdr.detectChanges();
         console.log("success");
       },
       error: () => {
-        this.state = 'error';
-        this.cdr.detectChanges();
+        this.state.set('error'); 
+        // this.cdr.detectChanges();
         console.log("error happened");
       }
     });
