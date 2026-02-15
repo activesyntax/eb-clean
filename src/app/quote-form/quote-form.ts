@@ -1,14 +1,12 @@
-import { Component, inject, signal, OnInit } from '@angular/core';
+import { Component, inject, signal, OnInit,  ChangeDetectorRef} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { of, delay } from 'rxjs';
-
-declare var bootstrap: any;
+import { HttpClient } from '@angular/common/http'; 
 
 @Component({
   selector: 'app-quote-form',
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './quote-form.html',
   styleUrl: './quote-form.css',
 })
@@ -19,10 +17,11 @@ export class QuoteForm implements OnInit {
 
   private fb = inject(FormBuilder);
   private http = inject(HttpClient);
+  private cdr = inject(ChangeDetectorRef);
 
   contactForm: FormGroup;
   confirmationModal: any;
-  state: 'waiting-for-input' | 'submitting'| 'missing-contact' | 'success' | 'error' = 'waiting-for-input' ;
+  state: 'idle' | 'submitting'| 'missing-contact' | 'success' | 'error' = 'idle' ;
   contactData: { email?: string, phone?: string, message: string } | null = null;
 
   constructor() {
@@ -46,7 +45,7 @@ export class QuoteForm implements OnInit {
   }
 
   onSubmit() {
-    this.state = 'waiting-for-input';
+    this.state = 'idle';
 
     const formValue = this.contactForm.value;
     const extractedContacts = this.extractContactInfo(formValue.message);
@@ -60,7 +59,6 @@ export class QuoteForm implements OnInit {
       this.state = 'missing-contact'
       return;
     }
-
 
     this.contactData = {
       email: email,
@@ -87,6 +85,7 @@ export class QuoteForm implements OnInit {
     const apiUrl = 'https://4qnl1taa5i.execute-api.eu-central-1.amazonaws.com/prod/quote-requests';
 
     const wrongApiUrl = "https://wrongurl.asdf"
+    const requestUrl = apiUrl;
 
     const requestBody = {
       email: this.contactData.email,
@@ -94,13 +93,15 @@ export class QuoteForm implements OnInit {
       message: this.contactData.message
     };
 
-    this.http.post(wrongApiUrl, requestBody).subscribe({
+    this.http.post(requestUrl, requestBody).subscribe({
       next: () => {
         this.state = 'success';
+        this.cdr.detectChanges();
         console.log("success");
       },
       error: () => {
         this.state = 'error';
+        this.cdr.detectChanges();
         console.log("error happened");
       }
     });
