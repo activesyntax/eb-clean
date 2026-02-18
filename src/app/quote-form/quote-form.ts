@@ -5,6 +5,8 @@ import { of, delay } from 'rxjs';
 import { HttpClient } from '@angular/common/http'; 
 import { email } from '@angular/forms/signals';
 
+declare var grecaptcha: any;
+
 @Component({
   selector: 'app-quote-form',
   imports: [CommonModule, ReactiveFormsModule],
@@ -110,23 +112,24 @@ export class QuoteForm implements OnInit {
     const requestBody = {
       email: this.contactData.email,
       phone: this.contactData.phone,
-      message: this.contactData.message
+      message: this.contactData.message,
+      // PRODUCTION
+      // recaptchaToken: '=6Ld-P3AsAAAAAPi3pvhc_2EWxmdlrwc320EZqbNq'
+      // TESTING
+      recaptchaToken: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
     };
 
     this.http.post(requestUrl, requestBody).subscribe({
       next: () => {
 
         this.state.set('success'); 
-        // this.cdr.detectChanges();
         console.log("success");
       },
       error: () => {
         this.state.set('error'); 
-        // this.cdr.detectChanges();
         console.log("error happened");
       }
     });
-
   }
 
   private extractContactInfo(text: string): { email?: string, phone?: string } {
