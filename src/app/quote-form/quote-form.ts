@@ -17,7 +17,7 @@ export class QuoteForm implements OnInit {
 
   user = signal('eros.balazs');
   domain = signal('eb-clean.hu');
-  state = signal<'idle' | 'submitting' | 'missing-contact'|'invalid-contact' | 'success' | 'error'>('idle');
+  state = signal<'idle' | 'submitting' | 'message-too-short'| 'missing-contact'|'invalid-contact' | 'success' | 'error'>('idle');
  
   private fb = inject(FormBuilder);
   private http = inject(HttpClient);
@@ -114,22 +114,27 @@ export class QuoteForm implements OnInit {
       phone: this.contactData.phone,
       message: this.contactData.message,
       // PRODUCTION
-      // recaptchaToken: '=6Ld-P3AsAAAAAPi3pvhc_2EWxmdlrwc320EZqbNq'
+      recaptchaToken: '=6Ld-P3AsAAAAAPi3pvhc_2EWxmdlrwc320EZqbNq'
       // TESTING
-      recaptchaToken: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+      // recaptchaToken: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
     };
 
-    this.http.post(requestUrl, requestBody).subscribe({
-      next: () => {
+    grecaptcha.ready(() => {
+      grecaptcha.execute(requestBody.recaptchaToken, { action: 'submit_contact' }).then((token: string) => {
 
-        this.state.set('success'); 
-        console.log("success");
-      },
-      error: () => {
-        this.state.set('error'); 
-        console.log("error happened");
-      }
+        this.http.post(requestUrl, requestBody).subscribe({
+          next: () => {
+
+            this.state.set('success'); 
+            console.log("success");
+          },
+          error: () => {
+            this.state.set('error'); 
+            console.log("error happened");
+          }
+      });
     });
+   });
   }
 
   private extractContactInfo(text: string): { email?: string, phone?: string } {

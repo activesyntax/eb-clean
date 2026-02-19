@@ -8,18 +8,25 @@
   <!-- {{ state() }} -->
   <!-- </div> -->
 
-  <div *ngIf="contactForm.disabled"
-    class="alert alert-danger alert-dismissible fade show border-start border-4 shadow-sm" role="alert">
+  <!-- STATE HANDLINGX -->
+
+  @switch (state()) {
+
+  @case ('message-too-short') {
+  <div class="alert alert-danger alert-dismissible fade show border-start border-4 shadow-sm" role="alert">
     <strong>Túl rövid az üzenet.</strong>
   </div>
+  }
 
-  <div *ngIf="state() === 'missing-contact'"
-    class="alert alert-danger alert-dismissible fade show border-start border-4 shadow-sm" role="alert">
+  @case ('missing-contact'){
+  <div class="alert alert-danger alert-dismissible fade show border-start border-4 shadow-sm" role="alert">
     <strong>Kérjük, adja meg email címét vagy telefonszámát, hogy felvehessük Önnel a kapcsolatot.</strong>
   </div>
 
-  <div *ngIf="state() === 'error'"
-    class="alert alert-danger alert-dismissible fade show border-start border-4 shadow-sm" role="alert">
+  }
+
+  @case ('error') {
+  <div class="alert alert-danger alert-dismissible fade show border-start border-4 shadow-sm" role="alert">
     <strong>Technikai hiba történt az ajánlatkérés elküldése során.<br> Kérjük, küldjön e-mailt az alábbi címre:<br><br>
 
       <a [href]="'mailto:' + user() + '@' + domain()" target="_blank" class="text-decoration-none text-dark">{{ user()
@@ -27,20 +34,31 @@
       </a>
     </strong>
   </div>
+  }
 
-  <div *ngIf="state() === 'submitting'" class="alert alert-info d-flex align-items-center shadow-sm" role="alert">
+  @case ('submitting') {
+  <div class="alert alert-info d-flex align-items-center shadow-sm" role="alert">
     <div class="spinner-border spinner-border-sm me-3" role="status" aria-hidden="true"></div>
     <div>
       <strong>Küldés folyamatban...</strong>
     </div>
   </div>
+  }
 
-  <div *ngIf="state() === 'success'" class="alert alert-info d-flex align-items-center shadow-sm" role="alert">
+  @case ('success'){
+
+  <div class="alert alert-info d-flex align-items-center shadow-sm" role="alert">
     <div>
       <strong>Köszönjük érdeklődését!<br>
         Munkatársunk hamarosan felveszi Önnel a kapcsolatot.</strong>
     </div>
   </div>
+
+  }
+
+  }
+
+  <!-- END OF STATE HANDLING -->
 
   <div class="d-grid">
     <button type="button" class="btn btn-cta primary btn-lg fw-bold" [disabled]="contactForm.invalid"
