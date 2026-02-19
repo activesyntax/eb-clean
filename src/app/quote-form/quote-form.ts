@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { of, delay } from 'rxjs';
 import { HttpClient } from '@angular/common/http'; 
-import { email } from '@angular/forms/signals';
 
 declare var grecaptcha: any;
 
@@ -33,9 +32,16 @@ export class QuoteForm implements OnInit {
   }
 
   ngOnInit() {
+    const messageControl = this.contactForm.get('message');
+
     this.http.get<{ quoteTemplateMessage: string }>('assets/data/messages.json').subscribe(data => {
+
       const message = data.quoteTemplateMessage;
-      this.contactForm.get('message')?.setValue(message);
+      messageControl?.setValue(message);
+      messageControl?.valueChanges
+              .subscribe(status => {
+                  this.messageLenghtValidation()
+                } );
     });
   }
 
@@ -96,6 +102,17 @@ export class QuoteForm implements OnInit {
     const normalizedPhone = phone?.replace(/\s+/g, "");
     return !!normalizedPhone && normalizedPhone !== '+36201234567';
   }  
+
+  messageLenghtValidation()
+  {
+    const messageControl = this.contactForm.get('message');
+    if (messageControl?.hasError('minlength')) {
+         this.state.set('message-too-short');
+    }
+    else {
+        this.state.set('idle');
+    }
+  }
 
   sendRequest() {
     if (!this.contactData) {

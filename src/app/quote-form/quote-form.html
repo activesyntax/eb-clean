@@ -1,7 +1,7 @@
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   <div class="mb-4">
     <textarea formControlName="message" class="form-control bg-dark text-white custom-textarea long-text"
-      id="fullMessage" rows="12"></textarea>
+      id="fullMessage" rows="12" (change)="messageLenghtValidation()"></textarea>
   </div>
 
   <!-- <div class="alert alert-danger"> -->
