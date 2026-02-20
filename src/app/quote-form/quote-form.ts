@@ -46,13 +46,6 @@ export class QuoteForm implements OnInit {
     });
   }
 
-
-  getMockData() {
-    return of({ id: 1, name: 'Test Data' }).pipe(
-      delay(3000) 
-    );
-  }
-
   onSubmit() {
 
     const formValue = this.contactForm.value;
@@ -143,11 +136,11 @@ export class QuoteForm implements OnInit {
           next: (response) => {
 
             this.state.set('success'); 
-            console.log("success");
-            console.log("Server Success Response:", response);          },
-          error: () => {
+            console.log("Server Success Response:", response);
+            },
+          error: (response) => {
             this.state.set('error'); 
-            console.log("error happened");
+            console.log("Server Error Response:", response);        
           }
       });
     });
