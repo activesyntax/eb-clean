@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { of, delay } from 'rxjs';
 import { HttpClient } from '@angular/common/http'; 
+import { timeout } from 'rxjs/operators'; 
 
 declare var grecaptcha: any;
 
@@ -126,25 +127,24 @@ export class QuoteForm implements OnInit {
     const wrongApiUrl = "https://wrongurl.asdf"
     const requestUrl = apiUrl;
 
-    const requestBody = {
-      email: this.contactData.email,
-      phone: this.contactData.phone,
-      message: this.contactData.message,
-      // PRODUCTION
-      recaptchaToken: '=6Ld-P3AsAAAAAPi3pvhc_2EWxmdlrwc320EZqbNq'
-      // TESTING
-      // recaptchaToken: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-    };
+    const siteKey =  '6Ld-P3AsAAAAAPi3pvhc_2EWxmdlrwc320EZqbNq';
 
     grecaptcha.ready(() => {
-      grecaptcha.execute(requestBody.recaptchaToken, { action: 'submit_contact' }).then((token: string) => {
+      grecaptcha.execute(siteKey, { action: 'submit_contact' }).then((token: string) => {
+
+        const requestBody = {
+          email: this.contactData?.email,
+          phone: this.contactData?.phone,
+          message: this.contactData?.message,
+          recaptchaToken: token
+        };
 
         this.http.post(requestUrl, requestBody).subscribe({
-          next: () => {
+          next: (response) => {
 
             this.state.set('success'); 
             console.log("success");
-          },
+            console.log("Server Success Response:", response);          },
           error: () => {
             this.state.set('error'); 
             console.log("error happened");
