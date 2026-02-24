@@ -1,38 +1,73 @@
-# EB-Clean
+# EB-Clean Website
 
-- nagyobb logo, ami atnyulik a meusavon (Manjaro page)
-- szeles card kompoensek (kde plasma page)
+This repository contains the source code and deployment configuration for the **EB-Clean** website, a professional cleaning services landing page built with modern web technologies and deployed on AWS.
 
-# Domain registration
-Local Hungarian Registrars (Recommended for best pricing):
+---
 
-ATW.hu: Very popular and cost-effective (approx. 400–1,500 HUF).
+## Table of Contents
 
-Rackhost.hu: Modern interface and widely used by developers in Hungary.
+- [Overview](#overview)  
+- [Features](#features)  
+- [Technology Stack](#technology-stack)  
+- [Architecture](#architecture)  
+- [Installation & Local Development](#installation--local-development)  
+- [Deployment](#deployment)  
+- [DNS & Email Setup](#dns--email-setup)  
+- [API](#api)  
+- [Security](#security)  
+- [License](#license)  
 
-DotRoll: Another major player with a solid API and management panel.
+---
 
+## Overview
 
-2. How to connect it to AWS (The Developer Workflow)
-Once you have bought the domain, you don't have to use the registrar's basic DNS tools. You can bridge it to AWS Route 53 in three steps:
+**EB-Clean** is a professional cleaning service website that showcases services like:
 
-Step A: Create a Hosted Zone in AWS
-Go to Route 53 console -> Hosted Zones -> Create Hosted Zone.
+- Solar panel cleaning
+- Roof cleaning
+- Wall cleaning
+- Concrete surfaces cleaning
+- Paving cleaning
+- Gravestone cleaning  
 
-Enter eb-clean.hu and click Create.
+It provides users with:
 
-AWS will generate 4 Name Servers (NS records). Copy these down (e.g., ns-123.awsdns-01.com.).
+- Service descriptions
+- Benefits overview
+- Before/after references
+- Contact and quote request form  
 
-Step B: Update the Registrar
-Log in to your registrar (e.g., Rackhost or ATW).
+---
 
-Find the "Name Server" or "DNS Management" section for your domain.
+## Features
 
-Replace their default name servers with the 4 AWS Name Servers you just copied.
+- Fully responsive landing page with Angular 21  
+- Interactive “Before/After” image comparison slider  
+- Contact form with reCAPTCHA verification  
+- Automated email notifications via AWS SES  
+- REST API integration with AWS Lambda + API Gateway  
+- Secure hosting and CDN with AWS S3 and CloudFront  
 
-Step C: Connect your S3/Music Logic
-Now that AWS controls the DNS, you can point your domain to your S3 content (if you decide to host a site) or simply create records for other services:
+---
 
-A Record (Alias): Point eb-clean.hu to a CloudFront distribution (best for large files).
+## Technology Stack
 
-CNAME: Point subdomains to specific endpoints.
+- **Frontend:** Angular 21, TypeScript, SCSS  
+- **Hosting:** AWS S3 (static hosting)  
+- **CDN:** AWS CloudFront  
+- **API:** AWS Lambda functions exposed via API Gateway (REST)  
+- **Email:** AWS Simple Email Service (SES) for contact form submissions  
+- **DNS & Domain:** Custom domain with MX records for business mailbox  
+- **Security:** Google reCAPTCHA v3 integration for form validation  
+
+---
+
+## Architecture
+
+```text
+[User] 
+   │
+   ▼
+[Angular Frontend] -- HTTPS --> [CloudFront CDN] -- Caching --> [S3 Bucket Hosting]
+   │
+   └─> [REST API via API Gateway] --> [AWS Lambda Functions] --> [SES for Emails]
