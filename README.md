@@ -3,6 +3,7 @@
 This repository contains the source code and deployment configuration for the **EB-Clean** website, a professional cleaning services landing page built with modern web technologies and deployed on AWS.
 
 ---
+<img src="branding/screenshot.png" alt="EB-Clean Website" height="500">
 
 ## Table of Contents
 
