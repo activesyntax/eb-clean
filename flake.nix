@@ -14,8 +14,11 @@
       packages = [
         pkgs.nodejs_24
         pkgs.git
+        pkgs.delta
       ];
 
+      GIT_PAGER = "delta";
+  
       shellHook = ''
         echo "Dev shell loaded"
       '';
