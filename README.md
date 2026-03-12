@@ -11,12 +11,7 @@ This repository contains the source code and deployment configuration for the **
 - [Features](#features)  
 - [Technology Stack](#technology-stack)  
 - [Architecture](#architecture)  
-- [Installation & Local Development](#installation--local-development)  
-- [Deployment](#deployment)  
-- [DNS & Email Setup](#dns--email-setup)  
-- [API](#api)  
-- [Security](#security)  
-- [License](#license)  
+
 
 ---
 
