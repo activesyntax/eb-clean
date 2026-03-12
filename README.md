@@ -10,7 +10,8 @@ This repository contains the source code and deployment configuration for the **
 - [Overview](#overview)  
 - [Features](#features)  
 - [Technology Stack](#technology-stack)  
-- [Architecture](#architecture)  
+- [Architecture](#architecture)
+- [License](#license)  
 
 
 ---
@@ -67,3 +68,11 @@ It provides users with:
 [Angular Frontend] -- HTTPS --> [CloudFront CDN] -- Caching --> [S3 Bucket Hosting]
    │
    └─> [REST API via API Gateway] --> [AWS Lambda Functions] --> [SES for Emails]
+
+---
+
+## License
+
+The source code of this project is licensed under the MIT License.
+
+All visual assets, branding, logos, and design elements are excluded from this license and remain the intellectual property of the author unless explicitly stated otherwise.
