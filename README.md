@@ -68,6 +68,7 @@ It provides users with:
 [Angular Frontend] -- HTTPS --> [CloudFront CDN] -- Caching --> [S3 Bucket Hosting]
    │
    └─> [REST API via API Gateway] --> [AWS Lambda Functions] --> [SES for Emails]
+```
 
 ---
 
